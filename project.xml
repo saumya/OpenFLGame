@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="MyGame101" package="com.sample.mygame101" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="MyGame101" />
+	
+	<source path="Source" />
+	
+	<haxelib name="openfl" />
+	
+	<assets path="Assets" rename="assets" />
+	
+</project>

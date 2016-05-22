@@ -47,9 +47,16 @@ class Game extends Sprite {
 	
 	public function render(e:Event):Void{
 		
-		this.shapeContainer.removeChildren();
+		//this.shapeContainer.removeChildren();
+		var n:Int = this.shapeContainer.numChildren;
+		if(n>=1000){
+			this.shapeContainer.removeChildren();
+		}
 
-		var s = shapeUtil.getCircle(50);
+		var s = shapeUtil.getCircle(Math.round(Math.random()*50));
+		s.x = this.background.width*Math.random();
+		s.y = this.background.height*Math.random();
+
 		this.shapeContainer.addChild(s);
 
 		

@@ -10,12 +10,14 @@ import openfl.system.Capabilities;
 import openfl.Assets;
 import openfl.Lib;
 
+import game.Game;
+
 
 class Main extends Sprite {
 
 	private var Background:Bitmap;
 	private var Footer:Bitmap;
-	//private var Game:PiratePigGame; 	
+	private var Game:Game; 	
 	
 	public function new () {
 		
@@ -34,7 +36,7 @@ class Main extends Sprite {
 		
 		addChild (Background);
 		addChild (Footer);
-		//addChild (Game);
+		addChild (Game);
 		
 	}
 
@@ -42,7 +44,7 @@ class Main extends Sprite {
 		
 		Background = new Bitmap (Assets.getBitmapData ("images/background_tile.png"));
 		Footer = new Bitmap (Assets.getBitmapData ("images/center_bottom.png"));
-		//Game = new PiratePigGame ();
+		Game = new Game ();
 		
 	}
 
@@ -51,10 +53,10 @@ class Main extends Sprite {
 		Background.width = newWidth;
 		Background.height = newHeight;
 		
-		//Game.resize (newWidth, newHeight);
+		Game.resize (newWidth, newHeight);
 		
-		//Footer.scaleX = Game.currentScale;
-		//Footer.scaleY = Game.currentScale;
+		Footer.scaleX = Game.currentScale;
+		Footer.scaleY = Game.currentScale;
 		Footer.x = newWidth / 2 - Footer.width / 2;
 		Footer.y = newHeight - Footer.height;
 		

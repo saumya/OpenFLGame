@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 	
-	<meta title="MyGame101" package="com.sample.mygame101" version="1.0.0" company="Company Name" />
+	<meta title="MyGame101" package="com.saumya.mygame101" version="1.0.0" company="Saumya" />
 	<app main="Main" path="Export" file="MyGame101" />
+
+	<window width="800" height="600" if="desktop" />
+	<window width="0" height="0" if="html5" />
 	
 	<source path="Source" />
 	
+	<icon path="Assets/images/icon.svg" />
+
 	<haxelib name="openfl" />
+	<haxelib name="actuate" />
 	
 	<assets path="Assets" rename="assets" />
+	
+	<assets path="Assets/fonts" rename="fonts" include="*.ttf" />
+	<assets path="Assets/images" rename="images" include="*" exclude="icon.svg" />
 	
 </project>

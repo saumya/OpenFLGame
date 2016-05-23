@@ -1,4 +1,5 @@
-//
+// Factory 
+// provides us shapes
 package utils;
 
 import openfl.display.Shape;

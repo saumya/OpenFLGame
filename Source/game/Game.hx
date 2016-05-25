@@ -14,10 +14,13 @@ import openfl.display.Graphics;
 import openfl.display.Shape;
 
 import utils.ShapeUtil;
+import utils.ButtonFactory;
 
 class Game extends Sprite {
 	
 	private var shapeUtil:ShapeUtil;
+	private var buttonFactory:ButtonFactory;
+
 	private var background:Shape;
 	private var shapeContainer:Sprite;
 
@@ -30,6 +33,7 @@ class Game extends Sprite {
 	}
 	public function init():Void{
 		this.shapeUtil = new ShapeUtil();
+		this.buttonFactory = new ButtonFactory();
 		construct();
 	}
 	public function construct():Void{
@@ -39,6 +43,9 @@ class Game extends Sprite {
 
 		this.shapeContainer = new Sprite();
 		this.addChild(this.shapeContainer);
+
+		var b:Sprite = this.buttonFactory.getButton();
+		this.addChild(b);
 
 		
 

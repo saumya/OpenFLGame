@@ -53,7 +53,11 @@ class Game extends Sprite {
 			this.shapeContainer.removeChildren();
 		}
 
-		var s = shapeUtil.getCircle(Math.round(Math.random()*50));
+		//var s = shapeUtil.getCircle(Math.round(Math.random()*50));
+		//var s = shapeUtil.getSquare(Math.round(Math.random()*50));
+		var n:UInt = Math.round(Math.random()*50);
+		var s = shapeUtil.getRandomShape(n);
+
 		s.x = this.background.width*Math.random();
 		s.y = this.background.height*Math.random();
 

@@ -33,6 +33,31 @@ class ShapeUtil {
 		g.endFill();
 		return s;
 	}
+	public function getSquare(length:UInt):Shape{
+		var s:Shape = new Shape();
+		var g:Graphics = s.graphics;
+		g.beginFill(getARandomColor(),1.0);
+		g.drawRect(0,0,length,length);
+		g.endFill();
+		return s;
+	}
+	public function getRandomShape(n:UInt):Shape{
+		var a = Math.round(Math.random()*2); // 2 : as we have circle,rectangle
+		var s:Shape;
+		switch (a) {
+			case 1:
+				s = getCircle(n);
+			
+			case 2:
+				s = getSquare(n);
+			
+			default:
+				s = getCircle(n);
+			
+		}
+		return s;
+	}
+	//
 	public function getARandomColor():UInt{
 		var i:Float = Math.random()*this.maxColorValue;
 		var j:UInt = Math.round(i);

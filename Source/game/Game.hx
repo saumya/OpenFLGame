@@ -55,8 +55,10 @@ class Game extends Sprite {
 
 		//var s = shapeUtil.getCircle(Math.round(Math.random()*50));
 		//var s = shapeUtil.getSquare(Math.round(Math.random()*50));
-		var n:UInt = Math.round(Math.random()*50);
-		var s = shapeUtil.getRandomShape(n);
+		//var n:UInt = Math.round(Math.random()*50);
+		//var s = shapeUtil.getRandomShape(n);
+
+		var s = shapeUtil.getRandomShapeSizeColor(50);
 
 		s.x = this.background.width*Math.random();
 		s.y = this.background.height*Math.random();

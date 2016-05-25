@@ -41,20 +41,29 @@ class ShapeUtil {
 		g.endFill();
 		return s;
 	}
+	// Returns a Random shape
+	// n is 
+	// radius of the circle
+	// length of a side of the square
 	public function getRandomShape(n:UInt):Shape{
 		var a = Math.round(Math.random()*2); // 2 : as we have circle,rectangle
 		var s:Shape;
 		switch (a) {
 			case 1:
 				s = getCircle(n);
-			
 			case 2:
 				s = getSquare(n);
-			
+				// incase random rotation is required
+				//var r1:UInt = Math.round(Math.random()*90);
+				//s.rotation = r1;
 			default:
 				s = getCircle(n);
-			
 		}
+		return s;
+	}
+	public function getRandomShapeSizeColor(maxSize:UInt):Shape{
+		var randomSize:UInt = Math.round(Math.random()*maxSize);
+		var s = getRandomShape(randomSize);
 		return s;
 	}
 	//

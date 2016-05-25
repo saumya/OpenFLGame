@@ -16,6 +16,7 @@ class ButtonFactory {
 
 	public function getButton():Sprite{
 		var s:Sprite = this.getRectangle();
+		// TODO: add text in it
 		return s;
 	}
 

@@ -16,15 +16,14 @@ class ButtonFactory {
 		this.maxColorValue = 256*256*256;
 	}
 
-	public function getQuickButton():Sprite{
-		var qb:QuickButton = new QuickButton("Boom Boom",40);
+	public function getQuickButton(name:String="Saumya",height:Int=40):QuickButton{
+		var qb:QuickButton = new QuickButton(name,height);
 		return qb;
 	}
 
-	private function getRectangle(w:Float,h:Float,margin:Float):Sprite {
+	private function getRectangle(w:Float,h:Float,margin:Float):Shape {
 		var width:Float = w + (2*margin);
-
-		var s:Sprite = new Sprite();
+		var s:Shape = new Shape();
 		var g:Graphics = s.graphics;
 		var c:UInt = Math.round(Math.random()*this.maxColorValue);
 		g.beginFill(c,1.0);

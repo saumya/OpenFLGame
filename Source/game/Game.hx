@@ -15,6 +15,7 @@ import openfl.display.Shape;
 
 import utils.ShapeUtil;
 import utils.ButtonFactory;
+import utils.button.QuickButton;
 
 class Game extends Sprite {
 	
@@ -44,8 +45,12 @@ class Game extends Sprite {
 		this.shapeContainer = new Sprite();
 		this.addChild(this.shapeContainer);
 
-		var b:Sprite = this.buttonFactory.getQuickButton();
-		this.addChild(b);
+		var b1:QuickButton = this.buttonFactory.getQuickButton();
+		var b2:QuickButton = this.buttonFactory.getQuickButton("Boom",60);
+		b2.y = b1.height + 10;
+		
+		this.addChild(b1);
+		this.addChild(b2);
 
 		
 

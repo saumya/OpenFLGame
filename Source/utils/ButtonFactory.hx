@@ -17,7 +17,7 @@ class ButtonFactory {
 	}
 
 	public function getQuickButton():Sprite{
-		var qb:QuickButton = new QuickButton();
+		var qb:QuickButton = new QuickButton("Boom");
 		return qb;
 	}
 

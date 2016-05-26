@@ -56,23 +56,32 @@ class QuickButton extends Sprite {
 		this.addChild(t);
 	}
 	private function drawBackground(w:Float,h:Float,margin:Float):Void{
+		trace("====== drawBackground ========");
+
 		var widthX:Float = w + (2*margin);
+
+		//var s:Shape = new Shape();
 		var g:Graphics = this.graphics;
 		var c:UInt = Math.round(Math.random()*this.maxColorValue);
+		trace('color',c);
 		g.beginFill(c,1.0);
-		g.drawRect(0,0,width,h);
+		g.drawRect(0,0,widthX,h);
 		g.endFill();
+		//
+		//this.addChild(s);
 	}
+	/*
 	private function getRectangle(w:Float,h:Float,margin:Float):Sprite {
 		var width:Float = w + (2*margin);
 
 		var s:Sprite = new Sprite();
 		var g:Graphics = s.graphics;
 		var c:UInt = Math.round(Math.random()*this.maxColorValue);
-		trace('color',c);
+
 		g.beginFill(c,1.0);
 		g.drawRect(0,0,width,h);
 		g.endFill();
 		return s;
 	}
+	*/
 }

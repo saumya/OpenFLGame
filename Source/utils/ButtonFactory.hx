@@ -20,10 +20,11 @@ class ButtonFactory {
 		this.maxColorValue = 256*256*256;
 	}
 
-	public function getButton():Sprite{
+	public function getQuickButton():Sprite{
 		var s:Sprite = this.getRectangle();
 		// text formats
-		var font = Assets.getFont ("fonts/FreebooterUpdated.ttf");
+		//var font = Assets.getFont ("fonts/FreebooterUpdated.ttf");
+		var font = Assets.getFont ("fonts/Archistico_Simple.ttf");
 		var defaultFormat = new TextFormat (font.fontName, 100, 0x000000);
 		defaultFormat.align = TextFormatAlign.CENTER;
 		// text

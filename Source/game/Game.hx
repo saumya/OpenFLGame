@@ -44,7 +44,7 @@ class Game extends Sprite {
 		this.shapeContainer = new Sprite();
 		this.addChild(this.shapeContainer);
 
-		var b:Sprite = this.buttonFactory.getButton();
+		var b:Sprite = this.buttonFactory.getQuickButton();
 		this.addChild(b);
 
 		

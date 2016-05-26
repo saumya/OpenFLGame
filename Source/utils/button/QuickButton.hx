@@ -20,31 +20,35 @@ class QuickButton extends Sprite {
 	
 	private var maxColorValue:UInt;
 	private var buttonLabel:String;
+	private var fontHeight:UInt;
+	private var horizontalMargin:UInt;
 
-	public function new(name:String="Saumya") {
+	public function new(name:String="Saumya",h:Int=20) {
 		super();
 		this.maxColorValue = 256*256*256;
 		this.buttonLabel = name;
+		this.fontHeight = h;
+		this.horizontalMargin = Math.round(this.fontHeight/10) ;
 		construct();
 	}
 	private function construct():Void{
-		var horizontalMargin:UInt = 10;
-		var fontHeight:UInt = 100;
+		//var horizontalMargin:UInt = 10;
+		//var fontHeight:UInt = 40;
 		// text formats
 		//var font = Assets.getFont ("fonts/FreebooterUpdated.ttf");
 		var font = Assets.getFont ("fonts/Archistico_Simple.ttf");
-		var defaultFormat = new TextFormat (font.fontName, fontHeight, 0x000000);
-		defaultFormat.align = TextFormatAlign.CENTER;
+		var defaultFormat = new TextFormat (font.fontName, this.fontHeight, 0x000000);
+		defaultFormat.align = TextFormatAlign.LEFT;
 		// text
 		var t:TextField = new TextField();
 		t.text = this.buttonLabel;
 		t.autoSize = TextFieldAutoSize.LEFT;
-		t.x = 0+horizontalMargin;
-		t.y = -(fontHeight/10); // A little upward is actually makes it look in CENTER
+		t.x = 0+this.horizontalMargin;
+		t.y = -(this.fontHeight/10); // A little upward is actually makes it look in CENTER
 		t.defaultTextFormat = defaultFormat;
 		t.embedFonts = true;
 		t.selectable = false;
-		this.drawBackground(t.width,t.height,horizontalMargin);
+		this.drawBackground(t.width,t.height,this.horizontalMargin);
 		this.addChild(t);
 	}
 	private function drawBackground(w:Float,h:Float,margin:Float):Void{

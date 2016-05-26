@@ -6,6 +6,12 @@ import openfl.display.Shape;
 import openfl.display.Graphics;
 import openfl.geom.Point;
 
+import openfl.text.TextField;
+import openfl.text.TextFormat;
+import openfl.text.TextFormatAlign;
+import openfl.Assets;
+import openfl.Lib;
+
 class ButtonFactory {
 	
 	private var maxColorValue:UInt;
@@ -16,7 +22,22 @@ class ButtonFactory {
 
 	public function getButton():Sprite{
 		var s:Sprite = this.getRectangle();
-		// TODO: add text in it
+		// text formats
+		var font = Assets.getFont ("fonts/FreebooterUpdated.ttf");
+		var defaultFormat = new TextFormat (font.fontName, 100, 0x000000);
+		defaultFormat.align = TextFormatAlign.CENTER;
+		// text
+		var t:TextField = new TextField();
+		t.text = "Saumya";
+		t.width = 300;
+		t.height = 100;
+		t.x = 0;
+		t.y = -10; // A little upward is actually makes it look in CENTER
+		t.defaultTextFormat = defaultFormat;
+		t.embedFonts = true;
+		t.selectable = false;
+		// add the text
+		s.addChild(t);
 		return s;
 	}
 

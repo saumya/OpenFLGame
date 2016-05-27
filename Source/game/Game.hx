@@ -4,14 +4,17 @@ package game;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
 import openfl.display.Sprite;
-import openfl.events.Event;
-import openfl.events.KeyboardEvent;
+import openfl.display.Graphics;
+import openfl.display.Shape;
+
 import openfl.system.Capabilities;
+
 import openfl.Assets;
 import openfl.Lib;
 
-import openfl.display.Graphics;
-import openfl.display.Shape;
+import openfl.events.Event;
+import openfl.events.KeyboardEvent;
+import openfl.events.MouseEvent;
 
 import utils.ShapeUtil;
 import utils.ButtonFactory;
@@ -45,12 +48,16 @@ class Game extends Sprite {
 		this.shapeContainer = new Sprite();
 		this.addChild(this.shapeContainer);
 
-		var b1:QuickButton = this.buttonFactory.getQuickButton();
+		//var b1:QuickButton = this.buttonFactory.getQuickButton();
+		var b1:QuickButton = this.buttonFactory.getQuickButton("Restart",60);
 		var b2:QuickButton = this.buttonFactory.getQuickButton("Boom",60);
 		b2.y = b1.height + 10;
 		
+		b1.addEventListener("click",onButton1Click);
+
 		this.addChild(b1);
 		this.addChild(b2);
+
 
 		
 
@@ -109,4 +116,15 @@ class Game extends Sprite {
 		
 		x = newWidth / 2 - (currentWidth * currentScale) / 2;
 	}
+
+	//
+	private function cleanAndRenderAgain():Void{
+		this.shapeContainer.removeChildren();
+		this.render(null);
+	}
+	// Event Listeners
+	private function onButton1Click(e:MouseEvent):Void {
+		cleanAndRenderAgain();
+	}
+
 }

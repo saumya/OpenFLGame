@@ -12,7 +12,11 @@ import openfl.Lib;
 
 import game.Game;
 
+// TODO: 
+// 1. Make a Button Contianer
+// 2. Put all Buttons there.
 
+// Main Game
 class Main extends Sprite {
 
 	private var Background:Bitmap;

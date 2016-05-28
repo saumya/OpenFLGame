@@ -19,6 +19,7 @@ import openfl.events.MouseEvent;
 import utils.ShapeUtil;
 import utils.ButtonFactory;
 import utils.button.QuickButton;
+import utils.button.QuickButtonWithBgColor;
 
 class Game extends Sprite {
 	
@@ -49,14 +50,19 @@ class Game extends Sprite {
 		this.addChild(this.shapeContainer);
 
 		//var b1:QuickButton = this.buttonFactory.getQuickButton();
-		var b1:QuickButton = this.buttonFactory.getQuickButton("Restart",60);
-		var b2:QuickButton = this.buttonFactory.getQuickButton("Boom",60);
-		b2.y = b1.height + 10;
+		var b1:QuickButtonWithBgColor = this.buttonFactory.getQuickButtonWithBgColor(0xFFFFFF,"RESTART",18);
+		//var b2:QuickButton = this.buttonFactory.getQuickButton("Boom",60);
+		//var b3:QuickButtonWithBgColor = this.buttonFactory.getQuickButtonWithBgColor(0xFFFFFF,"One");
+		
+		//b2.y = b1.height + 10;
+		//b3.y = b2.y+b2.height + 10;
+
 		
 		b1.addEventListener("click",onButton1Click);
 
 		this.addChild(b1);
-		this.addChild(b2);
+		//this.addChild(b2);
+		//this.addChild(b3);
 
 
 		

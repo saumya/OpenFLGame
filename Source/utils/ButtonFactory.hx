@@ -7,6 +7,7 @@ import openfl.display.Graphics;
 import openfl.geom.Point;
 
 import utils.button.QuickButton;
+import utils.button.QuickButtonWithBgColor;
 
 class ButtonFactory {
 	
@@ -18,6 +19,11 @@ class ButtonFactory {
 
 	public function getQuickButton(name:String="Saumya",height:Int=40):QuickButton{
 		var qb:QuickButton = new QuickButton(name,height);
+		return qb;
+	}
+
+	public function getQuickButtonWithBgColor(bgColor:UInt,name:String="Saumya",height:Int=40):QuickButtonWithBgColor{
+		var qb:QuickButtonWithBgColor = new QuickButtonWithBgColor(name,height,bgColor);
 		return qb;
 	}
 

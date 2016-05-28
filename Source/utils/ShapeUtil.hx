@@ -14,7 +14,8 @@ class ShapeUtil {
 
 	public function new() {
 		this.maxColorValue = 256*256*256;
-		this.bgSize = new Point(1017,800);
+		//this.bgSize = new Point(1017,800);
+		this.bgSize = new Point(400,600);
 	}
 	public function getBackground():Shape{
 		var s:Shape = new Shape();

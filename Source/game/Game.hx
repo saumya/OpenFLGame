@@ -20,6 +20,7 @@ import utils.ShapeUtil;
 import utils.ButtonFactory;
 import utils.button.QuickButton;
 import utils.button.QuickButtonWithBgColor;
+import utils.button.Menu;
 
 class Game extends Sprite {
 	
@@ -28,6 +29,7 @@ class Game extends Sprite {
 
 	private var background:Shape;
 	private var shapeContainer:Sprite;
+	private var menu:Menu;
 
 	public var currentScale:Float;
 
@@ -42,12 +44,19 @@ class Game extends Sprite {
 		construct();
 	}
 	public function construct():Void{
-
-		this.background = this.shapeUtil.getBackground();
+		//
+		var bgWidth:UInt = 400;
+		var bgHeight:UInt = 600;
+		//
+		this.background = this.shapeUtil.getBackground(bgWidth,bgHeight);
 		this.addChild(this.background);
 
 		this.shapeContainer = new Sprite();
 		this.addChild(this.shapeContainer);
+
+		this.menu = new Menu();
+		this.menu.y = bgHeight + 50;
+		this.addChild(menu);
 
 		//var b1:QuickButton = this.buttonFactory.getQuickButton();
 		var b1:QuickButtonWithBgColor = this.buttonFactory.getQuickButtonWithBgColor(0xFFFFFF,"RESTART",18);

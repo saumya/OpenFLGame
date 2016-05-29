@@ -17,7 +17,9 @@ class ShapeUtil {
 		//this.bgSize = new Point(1017,800);
 		this.bgSize = new Point(400,600);// The values are set in Project.xml
 	}
-	public function getBackground():Shape{
+	public function getBackground(width:UInt=400,height:UInt=600):Shape{
+		this.bgSize = new Point(width,height);
+
 		var s:Shape = new Shape();
 		var g:Graphics = s.graphics;
 		var c:UInt = Math.round(Math.random()*this.maxColorValue);

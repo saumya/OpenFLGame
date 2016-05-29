@@ -59,6 +59,7 @@ class Game extends Sprite {
 		this.menu = new Menu();
 		this.menu.y = bgHeight + 50;
 		this.menu.addEventListener(EventNames.GAME_RESTART,onGameRestart);
+		this.menu.addEventListener(EventNames.GAME_NEW_PATTERN,onGameNewPattern);
 		this.addChild(menu);
 
 		/*
@@ -141,6 +142,9 @@ class Game extends Sprite {
 		this.shapeContainer.removeChildren();
 		this.render(null);
 	}
+	private function changePattern():Void{
+		trace("changePattern:TODO:");
+	}
 	// Event Listeners
 	/*
 	private function onButton1Click(e:MouseEvent):Void {
@@ -149,6 +153,9 @@ class Game extends Sprite {
 	*/
 	private function onGameRestart(e:Event):Void{
 		cleanAndRenderAgain();
+	}
+	private function onGameNewPattern(e:Event):Void{
+		changePattern();
 	}
 
 }

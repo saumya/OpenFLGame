@@ -24,9 +24,19 @@ class Menu extends Sprite {
 	private function construct():Void{
 		makeBg();
 		//
-		var b1:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"RESTART",18);
-		b1.addEventListener("click",onButton1Click);
-		this.addChild(b1);
+		var leftPadding :UInt = 2;
+		var btnRestart:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"RESTART",18);
+		btnRestart.addEventListener("click",onRestart);
+		btnRestart.x = leftPadding;
+		btnRestart.y = 2;
+	
+		var btnNew:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"NEW PATTERN",18);
+		btnNew.addEventListener("click",onNew);
+		btnNew.x = leftPadding;
+		btnNew.y = btnRestart.y + btnRestart.height + 4;
+
+		this.addChild(btnRestart);
+		this.addChild(btnNew);
 	}
 	private function makeBg():Void{
 		// The values are set in Project.xml
@@ -37,8 +47,12 @@ class Menu extends Sprite {
 		g.endFill();
 	}
 	//
-	private function onButton1Click(e:MouseEvent):Void{
+	private function onRestart(e:MouseEvent):Void{
 		var newEvent:Event = new Event(EventNames.GAME_RESTART);
+		dispatchEvent(newEvent);
+	}
+	private function onNew(e:flash.events.MouseEvent):Void{
+		var newEvent:Event = new Event(EventNames.GAME_NEW_PATTERN);
 		dispatchEvent(newEvent);
 	}
 }

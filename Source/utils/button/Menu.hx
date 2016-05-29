@@ -17,6 +17,7 @@ class Menu extends Sprite {
 		makeBg();
 	}
 	private function makeBg():Void{
+		// The values are set in Project.xml
 		var g:Graphics = this.graphics;
 		g.clear();
 		g.beginFill(0xAAAAAA,1.0);

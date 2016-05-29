@@ -44,7 +44,7 @@ class Game extends Sprite {
 		construct();
 	}
 	public function construct():Void{
-		//
+		// The values are set in Project.xml
 		var bgWidth:UInt = 400;
 		var bgHeight:UInt = 600;
 		//

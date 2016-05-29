@@ -114,7 +114,7 @@ class Game extends Sprite {
 		this.shapeContainer.addChild(s);
 		*/
 
-		this.pFactory.renderPattern(1);
+		this.pFactory.renderPattern();
 		
 	}
 
@@ -155,6 +155,9 @@ class Game extends Sprite {
 	}
 	private function changePattern():Void{
 		trace("changePattern:TODO:");
+		this.shapeContainer.removeChildren();
+		this.pFactory.nextPattern();
+		this.render(null);
 	}
 	// Event Listeners
 	/*

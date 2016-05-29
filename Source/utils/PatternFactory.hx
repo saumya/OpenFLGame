@@ -19,7 +19,7 @@ class PatternFactory {
 	}
 	private function construct():Void{
 		shapeUtil = new ShapeUtil();
-		patternIndex = 0;
+		patternIndex = 1;
 	}
 	// First mathod to be called, before anything else
 	public function setContainer(container:Sprite,backgroundSize:Point):Void{
@@ -31,8 +31,8 @@ class PatternFactory {
 		this.patternIndex = this.patternIndex+1;
 	}
 
-	public function renderPattern(num:UInt):Void{
-		switch (num) {
+	public function renderPattern():Void{
+		switch (this.patternIndex) {
 			case 1:
 				pattern_one();
 			case 2:
@@ -63,6 +63,6 @@ class PatternFactory {
 	}
 
 	public function pattern_two():Void{
-
+		trace('TODO: pattern_two :');
 	}
 }

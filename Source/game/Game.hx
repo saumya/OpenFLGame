@@ -7,6 +7,8 @@ import openfl.display.Sprite;
 import openfl.display.Graphics;
 import openfl.display.Shape;
 
+import openfl.geom.Point;
+
 import openfl.system.Capabilities;
 
 import openfl.Assets;
@@ -18,6 +20,8 @@ import openfl.events.MouseEvent;
 
 import utils.ShapeUtil;
 import utils.ButtonFactory;
+import utils.PatternFactory;
+
 import utils.button.QuickButton;
 import utils.button.QuickButtonWithBgColor;
 import utils.button.Menu;
@@ -28,6 +32,7 @@ class Game extends Sprite {
 	
 	private var shapeUtil:ShapeUtil;
 	private var buttonFactory:ButtonFactory;
+	private var pFactory:PatternFactory;
 
 	private var background:Shape;
 	private var shapeContainer:Sprite;
@@ -43,6 +48,8 @@ class Game extends Sprite {
 	public function init():Void{
 		this.shapeUtil = new ShapeUtil();
 		this.buttonFactory = new ButtonFactory();
+		this.pFactory = new PatternFactory();
+		//
 		construct();
 	}
 	public function construct():Void{
@@ -79,13 +86,15 @@ class Game extends Sprite {
 		//this.addChild(b3);
 		*/
 
-		
+		// set the container
+		var bgSize:Point = new Point(bgWidth,bgHeight);
+		this.pFactory.setContainer(shapeContainer,bgSize);
 
 		this.addEventListener(Event.ENTER_FRAME,render);
 	}
 	
 	public function render(e:Event):Void{
-		
+		/*
 		//this.shapeContainer.removeChildren();
 		var n:Int = this.shapeContainer.numChildren;
 		if(n>=1000){
@@ -103,7 +112,9 @@ class Game extends Sprite {
 		s.y = this.background.height*Math.random();
 
 		this.shapeContainer.addChild(s);
+		*/
 
+		this.pFactory.pattern_one();
 		
 	}
 

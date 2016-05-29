@@ -22,6 +22,8 @@ import utils.button.QuickButton;
 import utils.button.QuickButtonWithBgColor;
 import utils.button.Menu;
 
+import utils.button.EventNames;
+
 class Game extends Sprite {
 	
 	private var shapeUtil:ShapeUtil;
@@ -56,8 +58,10 @@ class Game extends Sprite {
 
 		this.menu = new Menu();
 		this.menu.y = bgHeight + 50;
+		this.menu.addEventListener(EventNames.GAME_RESTART,onGameRestart);
 		this.addChild(menu);
 
+		/*
 		//var b1:QuickButton = this.buttonFactory.getQuickButton();
 		var b1:QuickButtonWithBgColor = this.buttonFactory.getQuickButtonWithBgColor(0xFFFFFF,"RESTART",18);
 		//var b2:QuickButton = this.buttonFactory.getQuickButton("Boom",60);
@@ -72,7 +76,7 @@ class Game extends Sprite {
 		this.addChild(b1);
 		//this.addChild(b2);
 		//this.addChild(b3);
-
+		*/
 
 		
 
@@ -138,7 +142,12 @@ class Game extends Sprite {
 		this.render(null);
 	}
 	// Event Listeners
+	/*
 	private function onButton1Click(e:MouseEvent):Void {
+		cleanAndRenderAgain();
+	}
+	*/
+	private function onGameRestart(e:Event):Void{
 		cleanAndRenderAgain();
 	}
 

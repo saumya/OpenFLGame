@@ -12,16 +12,34 @@ class PatternFactory {
 	private var bgSize:Point;
 	private var shapeUtil:ShapeUtil;
 
+	private var patternIndex:UInt;
+
 	public function new() {
 		construct();
 	}
 	private function construct():Void{
 		shapeUtil = new ShapeUtil();
+		patternIndex = 0;
 	}
 	// First mathod to be called, before anything else
 	public function setContainer(container:Sprite,backgroundSize:Point):Void{
 		this.patternContainer = container;
 		this.bgSize = backgroundSize;
+	}
+
+	public function nextPattern():Void{
+		this.patternIndex = this.patternIndex+1;
+	}
+
+	public function renderPattern(num:UInt):Void{
+		switch (num) {
+			case 1:
+				pattern_one();
+			case 2:
+				pattern_two();
+			default:
+				pattern_one();
+		}
 	}
 
 	public function pattern_one():Void{

@@ -114,7 +114,7 @@ class Game extends Sprite {
 		this.shapeContainer.addChild(s);
 		*/
 
-		this.pFactory.pattern_one();
+		this.pFactory.renderPattern(1);
 		
 	}
 

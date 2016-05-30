@@ -53,6 +53,12 @@ class PatternFactory {
 	}
 
 	public function renderPattern():Void{
+		//
+		var n:Int = this.patternContainer.numChildren;
+		if(n>=1000){
+			this.patternContainer.removeChildren();
+		}
+		/*
 		switch (this.patternIndex) {
 			case 1:
 				pattern_one();
@@ -69,6 +75,8 @@ class PatternFactory {
 			default:
 				pattern_one();
 		}
+		*/
+		pattern_6();
 	}
 
 	public function pattern_one():Void{
@@ -140,7 +148,7 @@ class PatternFactory {
 		patternContainer.addChild(s);
 	}
 	public function pattern_6():Void{
-		var s = shapeUtil.getSquare(30);
+		var s = shapeUtil.getSquare(20);
 		var n = patternContainer.numChildren;
 		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/4)) ;
 		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/4)) ;

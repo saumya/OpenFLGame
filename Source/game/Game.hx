@@ -57,7 +57,7 @@ class Game extends Sprite {
 		var bgWidth:UInt = 400;
 		var bgHeight:UInt = 600;
 		//
-		this.background = this.shapeUtil.getBackground(bgWidth,bgHeight);
+		this.background = this.shapeUtil.getBackground(bgWidth,bgHeight,0xAAAAAA);
 		this.addChild(this.background);
 
 		this.shapeContainer = new Sprite();

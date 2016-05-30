@@ -14,11 +14,16 @@ import utils.button.EventNames;
 class Menu extends Sprite {
 
 	private var btnFactory:ButtonFactory;
+	private var btnPause:QuickButtonWithBgColor;
 
 	public function new() {
 		super();
 		this.btnFactory = new ButtonFactory();
 		construct();
+	}
+
+	public function setPauseButtonLabel(label:String):Void{
+		trace("TODO");
 	}
 
 	private function construct():Void{
@@ -36,7 +41,7 @@ class Menu extends Sprite {
 		btnNew.x = leftPadding;
 		btnNew.y = btnRestart.y + btnRestart.height + 4;
 
-		var btnPause:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"PAUSE",18);
+		this.btnPause = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"PAUSE",18);
 		btnPause.addEventListener("click",onPause);
 		btnPause.x = leftPadding + btnNew.x+btnNew.width;
 		btnPause.y = btnNew.y;

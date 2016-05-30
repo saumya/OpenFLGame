@@ -38,6 +38,8 @@ class Game extends Sprite {
 	private var shapeContainer:Sprite;
 	private var menu:Menu;
 
+	private var isPaused:Bool;
+
 	public var currentScale:Float;
 
 
@@ -49,6 +51,8 @@ class Game extends Sprite {
 		this.shapeUtil = new ShapeUtil();
 		this.buttonFactory = new ButtonFactory();
 		this.pFactory = new PatternFactory();
+
+		this.isPaused = false;
 		//
 		construct();
 	}
@@ -90,7 +94,7 @@ class Game extends Sprite {
 		// set the container
 		var bgSize:Point = new Point(bgWidth,bgHeight);
 		this.pFactory.setContainer(shapeContainer,bgSize);
-
+		//
 		this.addEventListener(Event.ENTER_FRAME,render);
 	}
 	
@@ -172,7 +176,17 @@ class Game extends Sprite {
 		changePattern();
 	}
 	private function onGamePause(e:Event):Void{
-		trace("TODO");
+		
+		//this.addEventListener(Event.ENTER_FRAME,render);
+		this.menu.setPauseButtonLabel("PLAY");
+		
+		if(this.isPaused){
+			this.addEventListener(Event.ENTER_FRAME,render);
+			this.isPaused = false;
+		}else{
+			this.removeEventListener(Event.ENTER_FRAME,render);
+			this.isPaused = true;
+		}
 	}
 
 }

@@ -148,7 +148,7 @@ class PatternFactory {
 		patternContainer.addChild(s);
 	}
 	public function pattern_6():Void{
-		var s = shapeUtil.getSquare(20);
+		var s = shapeUtil.getSquare(30);
 		var n = patternContainer.numChildren;
 		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/4)) ;
 		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/4)) ;

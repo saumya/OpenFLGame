@@ -154,7 +154,6 @@ class Game extends Sprite {
 		this.render(null);
 	}
 	private function changePattern():Void{
-		trace("changePattern:TODO:");
 		this.shapeContainer.removeChildren();
 		this.pFactory.nextPattern();
 		this.render(null);

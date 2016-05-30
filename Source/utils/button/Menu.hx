@@ -25,18 +25,25 @@ class Menu extends Sprite {
 		makeBg();
 		//
 		var leftPadding :UInt = 2;
+
 		var btnRestart:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"RESTART",18);
 		btnRestart.addEventListener("click",onRestart);
 		btnRestart.x = leftPadding;
 		btnRestart.y = 2;
 	
-		var btnNew:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"NEW PATTERN",18);
+		var btnNew:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"NEW",18);
 		btnNew.addEventListener("click",onNew);
 		btnNew.x = leftPadding;
 		btnNew.y = btnRestart.y + btnRestart.height + 4;
 
+		var btnPause:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"PAUSE",18);
+		btnPause.addEventListener("click",onPause);
+		btnPause.x = leftPadding + btnNew.x+btnNew.width;
+		btnPause.y = btnNew.y;
+
 		this.addChild(btnRestart);
 		this.addChild(btnNew);
+		this.addChild(btnPause);
 	}
 	private function makeBg():Void{
 		// The values are set in Project.xml
@@ -51,8 +58,12 @@ class Menu extends Sprite {
 		var newEvent:Event = new Event(EventNames.GAME_RESTART);
 		dispatchEvent(newEvent);
 	}
-	private function onNew(e:flash.events.MouseEvent):Void{
+	private function onNew(e:MouseEvent):Void{
 		var newEvent:Event = new Event(EventNames.GAME_NEW_PATTERN);
+		dispatchEvent(newEvent);
+	}
+	private function onPause(e:MouseEvent):Void{
+		var newEvent:Event = new Event(EventNames.GAME_PAUSE);
 		dispatchEvent(newEvent);
 	}
 }

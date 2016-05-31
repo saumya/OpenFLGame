@@ -58,7 +58,8 @@ class PatternFactory {
 		if(n>=1000){
 			this.patternContainer.removeChildren();
 		}
-		/*
+		
+		
 		switch (this.patternIndex) {
 			case 1:
 				pattern_one();
@@ -72,11 +73,17 @@ class PatternFactory {
 				pattern_5();
 			case 6:
 				pattern_6();
+			case 7:
+				pattern_7();
+			case 8:
+				pattern_8();
+			case 9:
+				pattern_9();
 			default:
 				pattern_one();
 		}
-		*/
-		pattern_8();
+		
+		//pattern_9();
 	}
 
 	public function pattern_one():Void{
@@ -160,7 +167,7 @@ class PatternFactory {
 
 		var n = patternContainer.numChildren;
 		
-		var s = shapeUtil.getCircle(30, 0xAAAAAA );
+		var s = shapeUtil.getCircle(30, 0xAAAAAA,true );
 		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/4)) ;
 		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/4)) ;
 		s.rotation = n;
@@ -171,7 +178,18 @@ class PatternFactory {
 
 		var n = patternContainer.numChildren;
 		
-		var s = shapeUtil.getSquare(30, 0xAAAAAA );
+		var s = shapeUtil.getSquare(30, 0xAAAAAA,true );
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/4)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/4)) ;
+		s.rotation = n;
+		patternContainer.addChild(s);
+	}
+	public function pattern_9():Void{
+		
+
+		var n = patternContainer.numChildren;
+		
+		var s = shapeUtil.getCircle(20, 0,true );
 		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/4)) ;
 		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/4)) ;
 		s.rotation = n;

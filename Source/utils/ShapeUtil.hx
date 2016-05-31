@@ -33,31 +33,40 @@ class ShapeUtil {
 		g.endFill();
 		return s;
 	}
-	public function getCircle(radius:UInt,?color:UInt):Shape{
+	public function getCircle(radius:UInt,?color:UInt=0,?hasBorder:Bool):Shape{
 		
 		var c:UInt = getARandomColor();
-		if(color != null ){
+		if(color != 0 ){
 			c = color;
 		}
 		
 		var s:Shape = new Shape();
 		var g:Graphics = s.graphics;
-		g.lineStyle(1,0x000000);
+		
+		if (hasBorder) {
+			g.lineStyle(1,0xFFFFFF);
+		}
+		
+
 		g.beginFill(c,1.0);
 		g.drawCircle(0,0,radius);
 		g.endFill();
 		return s;
 	}
-	public function getSquare(length:UInt,?color:UInt):Shape{
+	public function getSquare(length:UInt,?color:UInt=0, ?hasBorder:Bool):Shape{
 
 		var c:UInt = getARandomColor();
-		if(color != null ){
+		if(color != 0){
 			c = color;
 		}
 
 		var s:Shape = new Shape();
 		var g:Graphics = s.graphics;
-		g.lineStyle(2,0x000000);
+
+		if (hasBorder) {
+			g.lineStyle(1,0xFFFFFF);
+		}
+
 		g.beginFill(c,1.0);
 		g.drawRect(0,0,length,length);
 		g.endFill();

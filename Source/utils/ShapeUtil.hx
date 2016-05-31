@@ -33,6 +33,8 @@ class ShapeUtil {
 		g.endFill();
 		return s;
 	}
+	// For a random color and border, parameters would be (4,0,true)
+	// The middle parameter would be zero ( 0 )
 	public function getCircle(radius:UInt,?color:UInt=0,?hasBorder:Bool):Shape{
 		
 		var c:UInt = getARandomColor();
@@ -53,6 +55,8 @@ class ShapeUtil {
 		g.endFill();
 		return s;
 	}
+	// For a random color and border, parameters would be (4,0,true)
+	// The middle parameter would be zero ( 0 )
 	public function getSquare(length:UInt,?color:UInt=0, ?hasBorder:Bool):Shape{
 
 		var c:UInt = getARandomColor();

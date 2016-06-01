@@ -58,8 +58,11 @@ class Game extends Sprite {
 	}
 	public function construct():Void{
 		// The values are set in Project.xml
-		var bgWidth:UInt = 400;
-		var bgHeight:UInt = 600;
+		var bgWidth:UInt = 700;
+		var bgHeight:UInt = 1100;
+
+		//var bgWidth:UInt = this.stage.stageWidth;
+		//var bgHeight:UInt = this.stage.stageHeight;
 		//
 		this.background = this.shapeUtil.getBackground(bgWidth,bgHeight,0xAAAAAA);
 		this.addChild(this.background);
@@ -144,13 +147,16 @@ class Game extends Sprite {
 			} else {
 				currentScale = maxScaleY;
 			}
-			
+			/*
 			scaleX = currentScale;
 			scaleY = currentScale;
-			
+			*/
 		}
 		
-		x = newWidth / 2 - (currentWidth * currentScale) / 2;
+		//x = newWidth / 2 - (currentWidth * currentScale) / 2;
+		var i:Float = (newWidth / 2 - (currentWidth ) / 2);
+		x = (1)*(i);
+
 	}
 
 	//

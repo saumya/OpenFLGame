@@ -35,7 +35,7 @@ class ShapeUtil {
 	}
 	// For a random color and border, parameters would be (4,0,true)
 	// The middle parameter would be zero ( 0 )
-	public function getCircle(radius:UInt,?color:UInt=0,?hasBorder:Bool):Shape{
+	public function getCircle(radius:Float,?color:UInt=0,?hasBorder:Bool):Shape{
 		
 		var c:UInt = getARandomColor();
 		if(color != 0 ){

@@ -79,6 +79,16 @@ class PatternFactory {
 				pattern_8();
 			case 9:
 				pattern_9();
+			case 10:
+				pattern_10();
+			case 11:
+				pattern_11();
+			case 12:
+				pattern_12();
+			case 13:
+				pattern_13();
+			case 14:
+				pattern_14();
 			default:
 				this.patternIndex = 1;
 				pattern_one();
@@ -129,7 +139,7 @@ class PatternFactory {
 	public function pattern_4():Void{
 		clearContainer();
 		
-		var s = shapeUtil.getCircle(14);
+		var s = shapeUtil.getCircle(30);
 		//var s = shapeUtil.getSquare(30);
 
 		//s.x = get_CenterPosition_InsideContainer().x;
@@ -142,24 +152,24 @@ class PatternFactory {
 		//s.y = get_CenterPosition_InsideContainer().y + Math.sin(n)*(this.bgSize.x/2 - 30);
 
 		var n = patternContainer.numChildren;
-		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/4)) ;
-		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/4)) ;
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/2)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/2)) ;
 
 		patternContainer.addChild(s);
 	}
 	public function pattern_5():Void{
 		var s = shapeUtil.getSquare(30);
 		var n = patternContainer.numChildren;
-		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/4)) ;
-		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/4)) ;
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/2)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/2)) ;
 
 		patternContainer.addChild(s);
 	}
 	public function pattern_6():Void{
 		var s = shapeUtil.getSquare(30);
 		var n = patternContainer.numChildren;
-		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/4)) ;
-		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/4)) ;
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/2)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/2)) ;
 		s.rotation = n;
 		patternContainer.addChild(s);
 	}
@@ -169,8 +179,8 @@ class PatternFactory {
 		var n = patternContainer.numChildren;
 		
 		var s = shapeUtil.getCircle(30, 0xAAAAAA,true );
-		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/4)) ;
-		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/4)) ;
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/2)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/2)) ;
 		s.rotation = n;
 		patternContainer.addChild(s);
 	}
@@ -180,20 +190,72 @@ class PatternFactory {
 		var n = patternContainer.numChildren;
 		
 		var s = shapeUtil.getSquare(30, 0xAAAAAA,true );
-		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/4)) ;
-		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/4)) ;
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/2)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/2)) ;
 		s.rotation = n;
 		patternContainer.addChild(s);
 	}
 	public function pattern_9():Void{
-		
-
 		var n = patternContainer.numChildren;
+		var s = shapeUtil.getCircle(30, 0,true );
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/2)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/2)) ;
 		
-		var s = shapeUtil.getCircle(20, 0,true );
-		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(n) * (n/4)) ;
-		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(n) * (n/4)) ;
-		s.rotation = n;
+		patternContainer.addChild(s);
+	}
+	public function pattern_10():Void{
+		var n = patternContainer.numChildren;
+		var i:UInt = 1000 - n;
+		var s = shapeUtil.getCircle(30, 0xAAAAAA,true );
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(i) * (i/2)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(i) * (i/2)) ;
+		
+		patternContainer.addChild(s);
+	}
+	public function pattern_11():Void{
+		var n = patternContainer.numChildren;
+		var i:UInt = 1000 - n;
+		var j:Float = 30*(n/1000);
+		var s = shapeUtil.getCircle(j,0,true );
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(i) * (i/2)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(i) * (i/2)) ;
+		
+		patternContainer.addChild(s);
+	}
+	public function pattern_12():Void{
+		var n = patternContainer.numChildren;
+		var i:UInt = 1000 - n;
+		var j:Float = 30-(30*((n+1)/1000));
+		var s = shapeUtil.getCircle(j,0,true );
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(i) * (i/2)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(i) * (i/2)) ;
+		
+		patternContainer.addChild(s);
+	}
+	public function pattern_13():Void{
+		var n = patternContainer.numChildren;
+		var i:UInt = 1000 - n;
+		var j:Float = 30-(30*((n+1)/1000));
+		var s = shapeUtil.getCircle(j,0);
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(i) * (i/2)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(i) * (i/2)) ;
+		
+		patternContainer.addChild(s);
+	}
+	public function pattern_14():Void{
+		var n = patternContainer.numChildren;
+		var i:UInt = 1000 - n;
+		
+		var j:Float = 30-(30*((n+1)/1000));
+		var k:UInt = Math.round(Math.random()*j);
+
+		//var k:Float = (Math.sin(i)) * (i/2))*(Math.cos(i)) * (i/2));
+		//var k:Float = Math.cos(i) * Math.sin(i) * (i/2);
+
+		var s = shapeUtil.getCircle(k,0);
+		s.x = get_CenterPosition_InsideContainer().x + (Math.sin(i) * (i/2)) ;
+		s.y = get_CenterPosition_InsideContainer().y + (Math.cos(i) * (i/2))  ;
+		
 		patternContainer.addChild(s);
 	}
 }

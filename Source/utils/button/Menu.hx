@@ -29,19 +29,19 @@ class Menu extends Sprite {
 	private function construct():Void{
 		makeBg();
 		//
-		var leftPadding :UInt = 2;
+		var leftPadding :UInt = 12;
 
-		var btnRestart:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"RESTART",18);
+		var btnRestart:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"RESTART",42);
 		btnRestart.addEventListener("click",onRestart);
 		btnRestart.x = leftPadding;
 		btnRestart.y = 2;
 	
-		var btnNew:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"NEW",18);
+		var btnNew:QuickButtonWithBgColor = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"NEW",42);
 		btnNew.addEventListener("click",onNew);
 		btnNew.x = leftPadding;
 		btnNew.y = btnRestart.y + btnRestart.height + 4;
 
-		this.btnPause = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"PAUSE",18);
+		this.btnPause = this.btnFactory.getQuickButtonWithBgColor(0xFFFFFF,"PAUSE",42);
 		btnPause.addEventListener("click",onPause);
 		btnPause.x = leftPadding + btnNew.x+btnNew.width;
 		btnPause.y = btnNew.y;
@@ -55,7 +55,7 @@ class Menu extends Sprite {
 		var g:Graphics = this.graphics;
 		g.clear();
 		g.beginFill(0xAAAAAA,1.0);
-		g.drawRect(0,0,400,60);
+		g.drawRect(0,0,700,120);
 		g.endFill();
 	}
 	//

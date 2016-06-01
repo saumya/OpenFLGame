@@ -80,6 +80,7 @@ class PatternFactory {
 			case 9:
 				pattern_9();
 			default:
+				this.patternIndex = 1;
 				pattern_one();
 		}
 		

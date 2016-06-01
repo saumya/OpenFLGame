@@ -67,11 +67,13 @@ class Game extends Sprite {
 		this.background = this.shapeUtil.getBackground(bgWidth,bgHeight,0xAAAAAA);
 		this.addChild(this.background);
 
+		this.background.y = 10;
+
 		this.shapeContainer = new Sprite();
 		this.addChild(this.shapeContainer);
 
 		this.menu = new Menu();
-		this.menu.y = bgHeight + 50;
+		this.menu.y = this.background.y+ bgHeight + 40;
 		this.menu.addEventListener(EventNames.GAME_RESTART,onGameRestart);
 		this.menu.addEventListener(EventNames.GAME_NEW_PATTERN,onGameNewPattern);
 		this.menu.addEventListener(EventNames.GAME_PAUSE,onGamePause);
@@ -147,6 +149,8 @@ class Game extends Sprite {
 			} else {
 				currentScale = maxScaleY;
 			}
+
+			
 			/*
 			scaleX = currentScale;
 			scaleY = currentScale;

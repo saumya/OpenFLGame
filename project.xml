@@ -5,7 +5,7 @@
 	<app main="Main" path="Export" file="MyGame101" />
 
 	<!-- <window width="800" height="600" if="desktop" /> -->
-	<window width="400" height="600" if="desktop" />
+	<window width="700" height="600" if="desktop" />
 	<window width="0" height="0" if="html5" />
 	
 	<source path="Source" />

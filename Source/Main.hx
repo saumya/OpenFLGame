@@ -15,6 +15,7 @@ import game.Game;
 
 class Main extends Sprite {
 
+	private var Background:Bitmap;
 	private var game:Game;
 	
 	public function new () {
@@ -33,16 +34,16 @@ class Main extends Sprite {
 
 	private function initialize ():Void {
 		stage.addEventListener (Event.RESIZE, stage_onResize);
-		//Background = new Bitmap (Assets.getBitmapData ("images/background_tile.png"));
+		Background = new Bitmap (Assets.getBitmapData ("images/background_tile.png"));
 		//Footer = new Bitmap (Assets.getBitmapData ("images/center_bottom.png"));
 		game = new Game ();
 		construct();
 	}
 
-	private function resize (newWidth:Int, newHeight:Int):Void {
+	private function resize (newWidth:Float, newHeight:Float):Void {
 		
-		//Background.width = newWidth;
-		//Background.height = newHeight;
+		Background.width = newWidth;
+		Background.height = newHeight;
 		
 		game.resize (newWidth, newHeight);
 		

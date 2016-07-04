@@ -128,7 +128,7 @@ class Game extends Sprite {
 		
 	}
 
-	public function resize(newWidth:Int, newHeight:Int):Void {
+	public function resize(newWidth:Float, newHeight:Float):Void {
 		var maxWidth = newWidth * 0.90;
 		var maxHeight = newHeight * 0.86;
 		

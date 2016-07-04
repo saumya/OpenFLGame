@@ -29,6 +29,7 @@ class Main extends Sprite {
 	}
 
 	private function construct ():Void {
+		addChild(Background);
 		addChild (game);
 	}
 

@@ -1,5 +1,5 @@
-An OpenFL game
-================
+An OpenFL Component library
+==========================
 
 ### Assets Used
 

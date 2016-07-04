@@ -12,65 +12,50 @@ import openfl.Lib;
 
 import game.Game;
 
-// TODO: 
-// 1. Make a Button Contianer
-// 2. Put all Buttons there.
 
-// Main Game
 class Main extends Sprite {
 
-	private var Background:Bitmap;
-	private var Footer:Bitmap;
-	private var Game:Game; 	
+	private var game:Game;
 	
 	public function new () {
-		
 		super ();
-		
-		initialize ();
-		construct ();
-		
-		resize (stage.stageWidth, stage.stageHeight);
-		stage.addEventListener (Event.RESIZE, stage_onResize);
+		addEventListener(Event.ADDED_TO_STAGE,onAddedToStage);
+	}
+
+	private function onAddedToStage(event:Event):Void{
+		removeEventListener(Event.ADDED_TO_STAGE,onAddedToStage);
+		initialize();
 	}
 
 	private function construct ():Void {
-		
-		Footer.smoothing = true;
-		
-		addChild (Background);
-		addChild (Footer);
-		addChild (Game);
-		
+		addChild (game);
 	}
 
 	private function initialize ():Void {
-		
-		Background = new Bitmap (Assets.getBitmapData ("images/background_tile.png"));
-		Footer = new Bitmap (Assets.getBitmapData ("images/center_bottom.png"));
-		Game = new Game ();
-		
+		stage.addEventListener (Event.RESIZE, stage_onResize);
+		//Background = new Bitmap (Assets.getBitmapData ("images/background_tile.png"));
+		//Footer = new Bitmap (Assets.getBitmapData ("images/center_bottom.png"));
+		game = new Game ();
+		construct();
 	}
 
 	private function resize (newWidth:Int, newHeight:Int):Void {
 		
-		Background.width = newWidth;
-		Background.height = newHeight;
+		//Background.width = newWidth;
+		//Background.height = newHeight;
 		
-		Game.resize (newWidth, newHeight);
+		game.resize (newWidth, newHeight);
 		
-		Footer.scaleX = Game.currentScale;
-		Footer.scaleY = Game.currentScale;
-		Footer.x = newWidth / 2 - Footer.width / 2;
-		Footer.y = newHeight - Footer.height;
+		//Footer.scaleX = Game.currentScale;
+		//Footer.scaleY = Game.currentScale;
+		//Footer.x = newWidth / 2 - Footer.width / 2;
+		//Footer.y = newHeight - Footer.height;
 		
 	}
 	
 	
 	private function stage_onResize (event:Event):Void {
-		
 		resize (stage.stageWidth, stage.stageHeight);
-		
 	}
 	
 	

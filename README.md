@@ -1,12 +1,18 @@
 An OpenFL Component library
 ==========================
+The following are the details of the components in this library.
+
+
+ - ButtonWithRandomColor
+ - ButtonWithBgColor
+
+
+
 
 ### Assets Used
-
  - [archistico][1]
 
-
-Commands
+Commands for OpenFL
 ```
 // sample game : 
 openfl create PiratePig

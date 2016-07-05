@@ -2,9 +2,6 @@ package game;
 
 import openfl.display.Sprite;
 
-import utils.button.QuickButton;
-import utils.button.QuickButtonWithBgColor;
-
 import com.saumya.components.ButtonWithRandomColor;
 import com.saumya.components.ButtonWithBgColor;
 

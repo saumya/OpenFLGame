@@ -6,6 +6,7 @@ import utils.button.QuickButton;
 import utils.button.QuickButtonWithBgColor;
 
 import com.saumya.components.ButtonWithRandomColor;
+import com.saumya.components.ButtonWithBgColor;
 
 class Game extends Sprite {
 
@@ -42,7 +43,7 @@ class Game extends Sprite {
 	private function drawUI():Void{
 		trace("Gmae:drawUI:");
 
-		var b:ButtonWithRandomColor = new ButtonWithRandomColor("Login",40);
+		var b:ButtonWithBgColor = new ButtonWithBgColor("Login",40,0xFFFF00);
 		b.x = 10;
 		b.y = 10;
 		addChild(b);

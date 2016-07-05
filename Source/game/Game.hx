@@ -2,6 +2,11 @@ package game;
 
 import openfl.display.Sprite;
 
+import utils.button.QuickButton;
+import utils.button.QuickButtonWithBgColor;
+
+import com.saumya.components.ButtonWithRandomColor;
+
 class Game extends Sprite {
 
 	private var gameWidth:Float;
@@ -36,5 +41,10 @@ class Game extends Sprite {
 
 	private function drawUI():Void{
 		trace("Gmae:drawUI:");
+
+		var b:ButtonWithRandomColor = new ButtonWithRandomColor("Login",40);
+		b.x = 10;
+		b.y = 10;
+		addChild(b);
 	}
 }

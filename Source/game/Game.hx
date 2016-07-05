@@ -22,12 +22,19 @@ class Game extends Sprite {
 
 	private function construct():Void{
 		trace("Gmae:construct:");
-		// TODO:
+		drawUI();
 	}
 
 	public function resize(newWidth:Float,newHeight:Float):Void{
 		trace("Gmae:resize:");
 		gameWidth = newWidth;
 		gameHeight = newHeight;
+
+		removeChildren();
+		drawUI();
+	}
+
+	private function drawUI():Void{
+		trace("Gmae:drawUI:");
 	}
 }

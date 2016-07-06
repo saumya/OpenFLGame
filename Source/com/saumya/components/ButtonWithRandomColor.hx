@@ -33,7 +33,10 @@ class ButtonWithRandomColor extends Sprite {
 		construct();
 	} //new
 	private function construct():Void{
-		var font = Assets.getFont ("fonts/Archistico_Simple.ttf");
+		
+		//var font = Assets.getFont ("fonts/Archistico_Simple.ttf");
+		var font = Assets.getFont ("fonts/OpenSans-Regular.ttf");
+
 		var defaultFormat = new TextFormat (font.fontName, this.fontHeight, 0x000000);
 		defaultFormat.align = TextFormatAlign.LEFT;
 		// text

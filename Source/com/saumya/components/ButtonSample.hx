@@ -34,7 +34,9 @@ class ButtonSample extends Sprite {
 	}//new
 	private function construct():Void{
 		
-		var font = Assets.getFont ("fonts/Archistico_Simple.ttf");
+		var font = Assets.getFont ("fonts/OpenSans-Regular.ttf");
+		//var font = Assets.getFont ("fonts/Archistico_Simple.ttf");
+		
 		//var font = Assets.getFont ("fonts/Quicksand-Light.otf");
 
 		var defaultFormat = new TextFormat (font.fontName, this.fontHeight, 0x000000);

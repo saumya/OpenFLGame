@@ -42,8 +42,8 @@ class Game extends Sprite {
 		trace("Gmae:drawUI:");
 
 		// component 
-		//var b:ButtonWithBgColor = new ButtonWithBgColor("Login 2 Me 3",20,0xFFFF00);
-		var b:ButtonSample = new ButtonSample("Login 2 Me",20);
+		var b:ButtonWithBgColor = new ButtonWithBgColor("LOGIN 2 Me 3",14,0xFFFF00);
+		//var b:ButtonSample = new ButtonSample("Login 2 Me",20);
 
 		//position
 		b.x = 10;

@@ -7,6 +7,14 @@ The following are the details of the components in this library.
  - ButtonWithBgColor
 
 
+### TODO:
+ - Button with default font
+ - Button with Fixed width
+ - Button with Border
+ - Check Box
+ - Toggle Button
+
+
 
 
 ### Assets Used

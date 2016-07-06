@@ -5,6 +5,7 @@ import openfl.display.Sprite;
 import com.saumya.components.ButtonSample;
 import com.saumya.components.ButtonWithRandomColor;
 import com.saumya.components.ButtonWithBgColor;
+import com.saumya.components.ButtonWithFixedWidth;
 
 class Game extends Sprite {
 
@@ -42,12 +43,22 @@ class Game extends Sprite {
 		trace("Gmae:drawUI:");
 
 		// component 
-		var b:ButtonWithBgColor = new ButtonWithBgColor("Button",12,0xFFFF00);
+		var b:ButtonWithFixedWidth = new ButtonWithFixedWidth("Login",12,50,0xFFFF00);
+		var b1:ButtonWithFixedWidth = new ButtonWithFixedWidth("Register",12,50,0xFFFF00);
+		
+		//var b:ButtonWithBgColor = new ButtonWithBgColor("Button",12,0xFFFF00);
 		//var b:ButtonSample = new ButtonSample("Login 2 Me",20);
 
 		//position
 		b.x = 10;
 		b.y = 10;
 		addChild(b);
+
+		b1.x = 10;
+		b1.y = b.y+b.height+2;
+		addChild(b1);
+
+		trace(b.height,b1.height);
+
 	}
 }

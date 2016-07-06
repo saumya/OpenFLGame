@@ -5,11 +5,12 @@ The following are the details of the components in this library.
 
  - ButtonWithRandomColor
  - ButtonWithBgColor
+ - Button with Fixed width
 
 
 ### TODO:
  - Button with default font
- - Button with Fixed width
+ 
  - Button with Border
  - Check Box
  - Toggle Button

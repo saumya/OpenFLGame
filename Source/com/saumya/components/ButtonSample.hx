@@ -33,7 +33,10 @@ class ButtonSample extends Sprite {
 		construct();
 	}//new
 	private function construct():Void{
+		
 		var font = Assets.getFont ("fonts/Archistico_Simple.ttf");
+		//var font = Assets.getFont ("fonts/Quicksand-Light.otf");
+
 		var defaultFormat = new TextFormat (font.fontName, this.fontHeight, 0x000000);
 		
 		//var defaultFormat = new TextFormat();

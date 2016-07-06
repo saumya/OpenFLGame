@@ -41,8 +41,11 @@ class Game extends Sprite {
 	private function drawUI():Void{
 		trace("Gmae:drawUI:");
 
-		//var b:ButtonWithBgColor = new ButtonWithBgColor("Login",20,0xFFFF00);
-		var b:ButtonSample = new ButtonSample("Login",20);
+		// component 
+		//var b:ButtonWithBgColor = new ButtonWithBgColor("Login 2 Me 3",20,0xFFFF00);
+		var b:ButtonSample = new ButtonSample("Login 2 Me",20);
+
+		//position
 		b.x = 10;
 		b.y = 10;
 		addChild(b);

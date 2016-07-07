@@ -24,12 +24,16 @@ class ButtonWithRandomColor extends Sprite {
 	private var fontHeight:UInt;
 	private var horizontalMargin:UInt;
 
+	private var textField:TextField;
+
 	public function new(name:String="Saumya",h:Int=20) {
 		super();
 		this.maxColorValue = 256*256*256;
 		this.buttonLabel = name;
 		this.fontHeight = h;
 		this.horizontalMargin = Math.round(this.fontHeight/10) ;
+
+		this.textField = new TextField();
 		construct();
 	} //new
 	private function construct():Void{
@@ -40,7 +44,8 @@ class ButtonWithRandomColor extends Sprite {
 		var defaultFormat = new TextFormat (font.fontName, this.fontHeight, 0x000000);
 		defaultFormat.align = TextFormatAlign.LEFT;
 		// text
-		var t:TextField = new TextField();
+		//var t:TextField = new TextField();
+		var t:TextField = this.textField;
 		t.text = this.buttonLabel;
 		t.autoSize = TextFieldAutoSize.LEFT;
 		t.x = 0+this.horizontalMargin;

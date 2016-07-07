@@ -43,8 +43,8 @@ class Game extends Sprite {
 		trace("Gmae:drawUI:");
 
 		// component 
-		var b:ButtonWithFixedWidth = new ButtonWithFixedWidth("Login",12,50,0xFFFF00);
-		var b1:ButtonWithFixedWidth = new ButtonWithFixedWidth("Register",12,50,0xFFFF00);
+		var b:ButtonWithFixedWidth = new ButtonWithFixedWidth("Login",12,80,0xFFFF00,true);
+		var b1:ButtonWithFixedWidth = new ButtonWithFixedWidth("Register",12,80,0xFFFF00);
 		
 		//var b:ButtonWithBgColor = new ButtonWithBgColor("Button",12,0xFFFF00);
 		//var b:ButtonSample = new ButtonSample("Login 2 Me",20);

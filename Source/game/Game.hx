@@ -8,6 +8,7 @@ import com.saumya.components.ButtonWithBgColor;
 import com.saumya.components.ButtonWithFixedWidth;
 
 import com.saumya.components.TextInputWithRandomColor;
+import com.saumya.components.TextInputWithBgColor;
 
 class Game extends Sprite {
 
@@ -49,6 +50,7 @@ class Game extends Sprite {
 		var b1:ButtonWithFixedWidth = new ButtonWithFixedWidth("Register",12,80,0xFFFF00);
 
 		var t1:TextInputWithRandomColor = new TextInputWithRandomColor("input output",20);
+		var t2:TextInputWithBgColor = new TextInputWithBgColor("T2",20);
 		
 		//var b:ButtonWithBgColor = new ButtonWithBgColor("Button",12,0xFFFF00);
 		//var b:ButtonSample = new ButtonSample("Login 2 Me",20);
@@ -65,6 +67,10 @@ class Game extends Sprite {
 		t1.x = 10;
 		t1.y = b1.y + b1.height+2;
 		addChild(t1);
+
+		t2.x = 10;
+		t2.y = t1.y + t1.height + 2;
+		addChild(t2);
 
 		trace(b.height,b1.height);
 

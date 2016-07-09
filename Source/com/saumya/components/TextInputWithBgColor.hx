@@ -18,7 +18,7 @@ import openfl.Assets;
 import openfl.Lib;
 
 
-class TextInputWithRandomColor extends Sprite {
+class TextInputWithBgColor extends Sprite {
 
 	private var maxColorValue:UInt;
 	private var buttonLabel:String;
@@ -48,7 +48,6 @@ class TextInputWithRandomColor extends Sprite {
 		//var t:TextField = new TextField();
 		var t:TextField = this.textField;
 		t.text = this.buttonLabel;
-		//t.autoSize = TextFieldAutoSize.LEFT;
 		t.autoSize = TextFieldAutoSize.NONE;
 		//t.width = 200;
 		t.height = fontHeight * (1.5);

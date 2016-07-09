@@ -6,13 +6,16 @@ import openfl.display.Sprite;
 import openfl.display.Sprite;
 import openfl.display.Shape;
 import openfl.display.Graphics;
+
 import openfl.geom.Point;
 
 import openfl.text.TextField;
-import flash.text.TextFieldType;
+import openfl.text.TextFieldType;
 import openfl.text.TextFormat;
 import openfl.text.TextFormatAlign;
 import openfl.text.TextFieldAutoSize;
+
+import openfl.events.Event;
 
 import openfl.Assets;
 import openfl.Lib;
@@ -23,18 +26,24 @@ class TextInputWithRandomColor extends Sprite {
 	private var maxColorValue:UInt;
 	private var buttonLabel:String;
 	private var fontHeight:UInt;
+	private var componentWidth:UInt;
+
 	private var horizontalMargin:UInt;
 
 	private var textField:TextField;
 
-	public function new(name:String="Saumya",h:Int=20) {
+	public function new(name:String="Saumya",h:Int=20,w:UInt=220) {
 		super();
 		this.maxColorValue = 256*256*256;
 		this.buttonLabel = name;
 		this.fontHeight = h;
+		this.componentWidth = w;
+
 		this.horizontalMargin = Math.round(this.fontHeight/10) ;
 
 		this.textField = new TextField();
+		//this.textField.addEventListener(Event.ADDED_TO_STAGE,onAddedToStage);
+		
 		construct();
 	} //new
 	private function construct():Void{
@@ -48,9 +57,13 @@ class TextInputWithRandomColor extends Sprite {
 		//var t:TextField = new TextField();
 		var t:TextField = this.textField;
 		t.text = this.buttonLabel;
+		
+		// Either autosize or width
+
 		//t.autoSize = TextFieldAutoSize.LEFT;
 		t.autoSize = TextFieldAutoSize.NONE;
-		//t.width = 200;
+		t.width = componentWidth;
+		
 		t.height = fontHeight * (1.5);
 		t.x = 0+this.horizontalMargin;
 		t.y = -(this.fontHeight/10); // A little upward is actually makes it look in CENTER
@@ -75,4 +88,11 @@ class TextInputWithRandomColor extends Sprite {
 		g.moveTo(0,h-4);
 		g.lineTo(widthX,h-4);
 	}//drawBackground
+
+	private function onAddedToStage(e:Event){
+		trace("TextInputWithRandomColor:onAddedToStage:");
+		trace(this.textField.length);
+
+		this.textField.width = this.textField.length;
+	}//onAddedToStage
 }

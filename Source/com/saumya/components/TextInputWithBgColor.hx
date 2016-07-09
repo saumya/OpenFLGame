@@ -24,9 +24,9 @@ class TextInputWithBgColor extends TextInputWithRandomColor {
 
 	private var bgColor:UInt = 0xFF0000;
 
-	public function new(name:String="Saumya",h:Int=20,backgroundColor:UInt=0xFFFFFF) {
+	public function new(name:String="Saumya",h:Int=20,w:UInt=220,backgroundColor:UInt=0xFFFFFF) {
 		bgColor = backgroundColor;
-		super(name,h);
+		super(name,h,w);
 	} //new
 
 	override private function drawBackground(w:Float,h:Float,margin:Float):Void{

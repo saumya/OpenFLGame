@@ -17,56 +17,24 @@ import openfl.text.TextFieldAutoSize;
 import openfl.Assets;
 import openfl.Lib;
 
+import com.saumya.components.TextInputWithRandomColor;
 
-class TextInputWithBgColor extends Sprite {
 
-	private var maxColorValue:UInt;
-	private var buttonLabel:String;
-	private var fontHeight:UInt;
-	private var horizontalMargin:UInt;
+class TextInputWithBgColor extends TextInputWithRandomColor {
 
-	private var textField:TextField;
+	private var bgColor:UInt = 0xFF0000;
 
-	public function new(name:String="Saumya",h:Int=20) {
-		super();
-		this.maxColorValue = 256*256*256;
-		this.buttonLabel = name;
-		this.fontHeight = h;
-		this.horizontalMargin = Math.round(this.fontHeight/10) ;
-
-		this.textField = new TextField();
-		construct();
+	public function new(name:String="Saumya",h:Int=20,backgroundColor:UInt=0xFFFFFF) {
+		bgColor = backgroundColor;
+		super(name,h);
 	} //new
-	private function construct():Void{
-		
-		//var font = Assets.getFont ("fonts/Archistico_Simple.ttf");
-		var font = Assets.getFont ("fonts/OpenSans-Regular.ttf");
 
-		var defaultFormat = new TextFormat (font.fontName, this.fontHeight, 0x000000);
-		defaultFormat.align = TextFormatAlign.LEFT;
-		// text
-		//var t:TextField = new TextField();
-		var t:TextField = this.textField;
-		t.text = this.buttonLabel;
-		t.autoSize = TextFieldAutoSize.NONE;
-		//t.width = 200;
-		t.height = fontHeight * (1.5);
-		t.x = 0+this.horizontalMargin;
-		t.y = -(this.fontHeight/10); // A little upward is actually makes it look in CENTER
-		t.defaultTextFormat = defaultFormat;
-		t.embedFonts = true;
-		t.selectable = true;
-		t.type = TextFieldType.INPUT;
-
-
-		this.drawBackground(t.width,t.height,this.horizontalMargin);
-		this.addChild(t);
-	}//construct
-	private function drawBackground(w:Float,h:Float,margin:Float):Void{
+	override private function drawBackground(w:Float,h:Float,margin:Float):Void{
 		var widthX:Float = w + (2*margin);
 		var g:Graphics = this.graphics;
-		var c:UInt = Math.round(Math.random()*this.maxColorValue);
-		g.beginFill(c,0.5);
+		//var c:UInt = Math.round(Math.random()*this.maxColorValue);
+		var c = bgColor;
+		g.beginFill(c,1.0);
 		g.drawRect(0,0,widthX,h);
 		g.endFill();
 
@@ -74,4 +42,5 @@ class TextInputWithBgColor extends Sprite {
 		g.moveTo(0,h-4);
 		g.lineTo(widthX,h-4);
 	}//drawBackground
+	
 }

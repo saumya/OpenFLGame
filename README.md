@@ -11,7 +11,6 @@ The following are the details of the components in this library.
 ### TODO:
  - Button with default font
  
- - Button with Border
  - Check Box
  - Toggle Button
 

@@ -77,16 +77,18 @@ class Game extends Sprite {
 		addChild(t2);
 
 		t3.x = 10;
-		t3.y = t2.y + t2.height + 2;
-		addChild(t3);
+		//t3.y = t2.y + t2.height + 2;
+		//addChild(t3);
 
 		// continers
 
 		var c1:BasicContainer = new BasicContainer(300,200);
 
 		c1.x = 10;
-		c1.y = t3.y + t3.height + 2;
+		c1.y = t2.y + t2.height + 2;
 		addChild(c1);
+
+		c1.addChild(t3);
 
 
 	}

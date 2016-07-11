@@ -4,6 +4,10 @@ package com.saumya.containers;
 import openfl.display.Sprite;
 import openfl.display.Graphics;
 
+import openfl.display.DisplayObject;
+
+import openfl.errors.Error;
+
 
 class BasicContainer extends Sprite {
 
@@ -28,5 +32,14 @@ class BasicContainer extends Sprite {
 		g.endFill();
 
 		//trace(this.width,this.height);
+	}
+
+	override public function addChild(child:DisplayObject):DisplayObject{
+		trace('BasicContainer : addChild : ');
+
+		var e:Error = new Error("BasicContainer, Error in handling content. Instead of addChild, use addContent.");
+		throw e;
+
+		return child;
 	}
 }

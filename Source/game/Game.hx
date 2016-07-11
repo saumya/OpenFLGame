@@ -47,7 +47,7 @@ class Game extends Sprite {
 	private function drawUI():Void{
 		trace("Gmae:drawUI:");
 
-		// component 
+		// component ===================================
 		
 		//var b:ButtonWithBgColor = new ButtonWithBgColor("Button",12,0xFFFF00);
 		//var b:ButtonSample = new ButtonSample("Login 2 Me",20);
@@ -58,6 +58,7 @@ class Game extends Sprite {
 		var t1:TextInputWithRandomColor = new TextInputWithRandomColor("input output",12,120);
 		var t2:TextInputWithBgColor = new TextInputWithBgColor("T2 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2",20,350,0xFF00FF);
 		var t3:TextInputWithBgColor = new TextInputWithBgColor("T2 T2 T2 T2 T2 T2 T2",18,220,0xFFFFFF,true);
+		var t4:TextInputWithBgColor = new TextInputWithBgColor("T4 is TextInputWithBgColor",18,250,0xCCCCCC,false);
 
 		//position
 		b.x = 10;
@@ -80,7 +81,10 @@ class Game extends Sprite {
 		//t3.y = t2.y + t2.height + 2;
 		//addChild(t3);
 
-		// continers
+		t4.x = 10;
+		t4.y = t3.y + t3.height + 2;
+
+		// continers ===================================
 
 		var c1:BasicContainer = new BasicContainer(300,200);
 
@@ -88,9 +92,8 @@ class Game extends Sprite {
 		c1.y = t2.y + t2.height + 2;
 		addChild(c1);
 
-		//c1.addChild(t3);
-		c1.addContent(t3);
-
-
+		//c1.addChild(t3); // Error
+		c1.addContent(t3); // working
+		c1.addContent(t4);
 	}
 }

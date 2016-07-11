@@ -90,10 +90,15 @@ class TextInputWithRandomColor extends Sprite {
 		g.drawRect(0,0,widthX,h);
 		g.endFill();
 
-		g.lineStyle(2,0x000000,1.0);
-		g.moveTo(0,h-4);
-		g.lineTo(widthX,h-4);
+		drawUnderline(widthX,h);
 	}//drawBackground
+	private function drawUnderline(widthX:Float,h:Float){
+		var g:Graphics = this.graphics;
+		var yH:Float = (h-2);
+		g.lineStyle(1,0x000000,1.0);
+		g.moveTo(0,yH);
+		g.lineTo(widthX,yH);
+	}
 
 	private function onAddedToStage(e:Event){
 		trace("TextInputWithRandomColor:onAddedToStage:");

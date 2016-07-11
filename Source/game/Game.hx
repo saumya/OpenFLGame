@@ -53,9 +53,9 @@ class Game extends Sprite {
 		var b:ButtonWithFixedWidth = new ButtonWithFixedWidth("Login",12,80,0xFFFF00,true);
 		var b1:ButtonWithFixedWidth = new ButtonWithFixedWidth("Register",12,80,0xFFFF00);
 
-		var t1:TextInputWithRandomColor = new TextInputWithRandomColor("input output",20,120);
+		var t1:TextInputWithRandomColor = new TextInputWithRandomColor("input output",12,120);
 		var t2:TextInputWithBgColor = new TextInputWithBgColor("T2 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2",20,350,0xFF00FF);
-		var t3:TextInputWithBgColor = new TextInputWithBgColor("T2 T2 T2 T2 T2 T2 T2",20,220,0xFFFFFF,true);
+		var t3:TextInputWithBgColor = new TextInputWithBgColor("T2 T2 T2 T2 T2 T2 T2",18,220,0xFFFFFF,true);
 
 		//position
 		b.x = 10;

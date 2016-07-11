@@ -35,7 +35,6 @@ class TextInputWithBgColor extends TextInputWithRandomColor {
 		var widthX:Float = w + (2*margin);
 		var g:Graphics = this.graphics;
 		//var c:UInt = Math.round(Math.random()*this.maxColorValue);
-
 		var bgAlpha:Float = 1.0;
 		if(isBgTransparent){
 			//bgAlpha = 0.0;
@@ -47,9 +46,7 @@ class TextInputWithBgColor extends TextInputWithRandomColor {
 			g.endFill();
 		}
 		// Draw line
-		g.lineStyle(2,0x000000,1.0);
-		g.moveTo(0,h-4);
-		g.lineTo(widthX,h-4);
+		drawUnderline(widthX,h);
 	}//drawBackground
 	
 }

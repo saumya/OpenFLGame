@@ -2,6 +2,8 @@ package game;
 
 import openfl.display.Sprite;
 
+import openfl.ui.Multitouch;
+
 import com.saumya.components.ButtonSample;
 import com.saumya.components.ButtonWithRandomColor;
 import com.saumya.components.ButtonWithBgColor;
@@ -27,6 +29,11 @@ class Game extends Sprite {
 		trace("Gmae:initialise:");
 		gameWidth = 400;
 		gameHeight = 600;
+
+		trace("Gmae:initialise: Multitouch :   ==================");
+		trace(Multitouch.inputMode,Multitouch.maxTouchPoints,Multitouch.supportedGestures);
+		trace("Gmae:initialise: Multitouch : / ==================");
+
 		construct();
 	}
 

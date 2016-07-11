@@ -59,10 +59,12 @@ class TextInputWithRandomColor extends Sprite {
 		t.text = this.buttonLabel;
 		
 		// Either autosize or width
-
 		//t.autoSize = TextFieldAutoSize.LEFT;
 		t.autoSize = TextFieldAutoSize.NONE;
 		t.width = componentWidth;
+
+		t.type = TextFieldType.INPUT;
+		//t.type = TextFieldType.DYNAMIC;
 		
 		t.height = fontHeight * (1.5);
 		t.x = 0+this.horizontalMargin;
@@ -70,7 +72,11 @@ class TextInputWithRandomColor extends Sprite {
 		t.defaultTextFormat = defaultFormat;
 		t.embedFonts = true;
 		t.selectable = true;
-		t.type = TextFieldType.INPUT;
+		t.border = false;
+		//t.maxChars = 10;
+		//t.length = 10;
+		t.multiline = false;
+		
 
 
 		this.drawBackground(t.width,t.height,this.horizontalMargin);

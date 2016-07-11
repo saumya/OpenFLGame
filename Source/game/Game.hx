@@ -31,7 +31,10 @@ class Game extends Sprite {
 		gameHeight = 600;
 
 		trace("Gmae:initialise: Multitouch :   ==================");
-		trace(Multitouch.inputMode,Multitouch.maxTouchPoints,Multitouch.supportedGestures);
+		trace("Multitouch.supportsTouchEvents",Multitouch.supportsTouchEvents);
+		trace("Multitouch.inputMode",Multitouch.inputMode);
+		trace("Multitouch.maxTouchPoints",Multitouch.maxTouchPoints);
+		trace("Multitouch.supportedGestures",Multitouch.supportedGestures);
 		trace("Gmae:initialise: Multitouch : / ==================");
 
 		construct();

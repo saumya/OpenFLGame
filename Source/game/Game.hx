@@ -10,6 +10,8 @@ import com.saumya.components.ButtonWithFixedWidth;
 import com.saumya.components.TextInputWithRandomColor;
 import com.saumya.components.TextInputWithBgColor;
 
+import com.saumya.containers.BasicContainer;
+
 class Game extends Sprite {
 
 	private var gameWidth:Float;
@@ -78,7 +80,14 @@ class Game extends Sprite {
 		t3.y = t2.y + t2.height + 2;
 		addChild(t3);
 
-		trace(b.height,b1.height);
+		// continers
+
+		var c1:BasicContainer = new BasicContainer(300,200);
+
+		c1.x = 10;
+		c1.y = t3.y + t3.height + 2;
+		addChild(c1);
+
 
 	}
 }

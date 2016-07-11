@@ -34,12 +34,19 @@ class BasicContainer extends Sprite {
 		//trace(this.width,this.height);
 	}
 
+	// Not allowed in container
 	override public function addChild(child:DisplayObject):DisplayObject{
 		trace('BasicContainer : addChild : ');
 
 		var e:Error = new Error("BasicContainer, Error in handling content. Instead of addChild(), use addContent().",2001);
 		throw e;
 
+		return child;
+	}
+	//
+	public function addContent(child:DisplayObject):DisplayObject{
+		super.addChild(child);
+		
 		return child;
 	}
 }

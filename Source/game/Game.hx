@@ -88,7 +88,8 @@ class Game extends Sprite {
 		c1.y = t2.y + t2.height + 2;
 		addChild(c1);
 
-		c1.addChild(t3);
+		//c1.addChild(t3);
+		c1.addContent(t3);
 
 
 	}

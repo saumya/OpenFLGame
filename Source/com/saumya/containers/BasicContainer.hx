@@ -37,7 +37,7 @@ class BasicContainer extends Sprite {
 	override public function addChild(child:DisplayObject):DisplayObject{
 		trace('BasicContainer : addChild : ');
 
-		var e:Error = new Error("BasicContainer, Error in handling content. Instead of addChild, use addContent.");
+		var e:Error = new Error("BasicContainer, Error in handling content. Instead of addChild(), use addContent().",2001);
 		throw e;
 
 		return child;

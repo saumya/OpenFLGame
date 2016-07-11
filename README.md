@@ -7,12 +7,15 @@ The following are the details of the components in this library.
  - ButtonWithBgColor
  - Button with Fixed width
 
+ - TextInputWithRandomColor
+ - TextInputWithBgColor
+
 
 ### TODO:
- - Button with default font
- 
+
  - Check Box
  - Toggle Button
+ - ScollView
 
 
 

@@ -57,8 +57,12 @@ class Game extends Sprite {
 
 		var t1:TextInputWithRandomColor = new TextInputWithRandomColor("input output",12,120);
 		var t2:TextInputWithBgColor = new TextInputWithBgColor("T2 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2",20,350,0xFF00FF);
+		
 		var t3:TextInputWithBgColor = new TextInputWithBgColor("T2 T2 T2 T2 T2 T2 T2",18,220,0xFFFFFF,true);
 		var t4:TextInputWithBgColor = new TextInputWithBgColor("T4 is TextInputWithBgColor",18,250,0xCCCCCC,false);
+		var t5:TextInputWithBgColor = new TextInputWithBgColor("T5",18,250,0xCCCCCC,false);
+		var t6:TextInputWithBgColor = new TextInputWithBgColor("T6",18,250,0xBBBBBB,false);
+		var t7:TextInputWithBgColor = new TextInputWithBgColor("T7",18,250,0xAAAAAA,false);
 
 		//position
 		b.x = 10;
@@ -84,9 +88,18 @@ class Game extends Sprite {
 		t4.x = 10;
 		t4.y = t3.y + t3.height + 2;
 
+		t5.x = 10;
+		t5.y = t4.y + t4.height + 2;
+
+		t6.x = 10;
+		t6.y = t5.y + t5.height + 2;
+
+		t7.x = 10;
+		t7.y = t6.y + t6.height + 2;
+
 		// continers ===================================
 
-		var c1:BasicContainer = new BasicContainer(300,200);
+		var c1:BasicContainer = new BasicContainer(300,100);
 
 		c1.x = 10;
 		c1.y = t2.y + t2.height + 2;
@@ -95,5 +108,8 @@ class Game extends Sprite {
 		//c1.addChild(t3); // Error
 		c1.addContent(t3); // working
 		c1.addContent(t4);
+		c1.addContent(t5);
+		c1.addContent(t6);
+		c1.addContent(t7);
 	}
 }

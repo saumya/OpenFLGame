@@ -23,9 +23,11 @@ import com.saumya.components.TextInputWithRandomColor;
 class TextInputWithBgColor extends TextInputWithRandomColor {
 
 	private var bgColor:UInt = 0xFF0000;
+	private var isBgTransparent:Bool = false;
 
-	public function new(name:String="Saumya",h:Int=20,w:UInt=220,backgroundColor:UInt=0xFFFFFF) {
+	public function new(name:String="Saumya",h:Int=20,w:UInt=220,backgroundColor:UInt=0xFFFFFF,shouldHaveTransparentBackground:Bool=false) {
 		bgColor = backgroundColor;
+		isBgTransparent = shouldHaveTransparentBackground;
 		super(name,h,w);
 	} //new
 
@@ -33,11 +35,18 @@ class TextInputWithBgColor extends TextInputWithRandomColor {
 		var widthX:Float = w + (2*margin);
 		var g:Graphics = this.graphics;
 		//var c:UInt = Math.round(Math.random()*this.maxColorValue);
-		var c = bgColor;
-		g.beginFill(c,1.0);
-		g.drawRect(0,0,widthX,h);
-		g.endFill();
 
+		var bgAlpha:Float = 1.0;
+		if(isBgTransparent){
+			//bgAlpha = 0.0;
+			// Do not Draw background
+		}else{
+			var c = bgColor;
+			g.beginFill(c,bgAlpha);
+			g.drawRect(0,0,widthX,h);
+			g.endFill();
+		}
+		// Draw line
 		g.lineStyle(2,0x000000,1.0);
 		g.moveTo(0,h-4);
 		g.lineTo(widthX,h-4);

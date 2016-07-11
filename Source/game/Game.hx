@@ -51,6 +51,7 @@ class Game extends Sprite {
 
 		var t1:TextInputWithRandomColor = new TextInputWithRandomColor("input output",20,120);
 		var t2:TextInputWithBgColor = new TextInputWithBgColor("T2 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2",20,350,0xFF00FF);
+		var t3:TextInputWithBgColor = new TextInputWithBgColor("T2 T2 T2 T2 T2 T2 T2",20,220,0xFFFFFF,true);
 		
 		//var b:ButtonWithBgColor = new ButtonWithBgColor("Button",12,0xFFFF00);
 		//var b:ButtonSample = new ButtonSample("Login 2 Me",20);
@@ -71,6 +72,10 @@ class Game extends Sprite {
 		t2.x = 10;
 		t2.y = t1.y + t1.height + 2;
 		addChild(t2);
+
+		t3.x = 10;
+		t3.y = t2.y + t2.height + 2;
+		addChild(t3);
 
 		trace(b.height,b1.height);
 

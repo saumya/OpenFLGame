@@ -15,7 +15,7 @@ The following are the details of the components in this library.
 
  - Check Box
  - Toggle Button
- - ScollView
+ - ScollView (wip)
 
 
 

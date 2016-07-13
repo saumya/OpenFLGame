@@ -24,6 +24,10 @@ class BasicContainer extends Sprite {
 	private var containerClip:Sprite;
 	private var maskClip:Sprite;
 
+	// gesture
+	private var initX:Float = 0;
+	private var initY:Float = 0;
+
 	public function new(fWidth:Float=200,fHeight:Float=100) {
 		super();
 		widthX = fWidth;
@@ -91,11 +95,18 @@ class BasicContainer extends Sprite {
 	// Event handler
 	private function onTouchStart(e:TouchEvent):Void{
 		trace("onTouchStart");
+		trace(e.localX,e.localY);
+		initX = e.localX;
+		initY = e.localY;
 	}
 	private function onTouchMove(e:TouchEvent):Void{
-		trace("onTouchMove");
+		//trace("onTouchMove");
 		trace(e.localX,e.localY);
-		this.containerClip.y = e.localY;
+		
+		//this.containerClip.y = e.localY;
+		this.containerClip.y = e.localY - this.initY;
+		
+		//trace(e.localX,e.localY);
 	}
 	private function onTouchEnd(e:TouchEvent):Void{
 		trace("onTouchEnd");

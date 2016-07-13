@@ -91,14 +91,14 @@ class BasicContainer extends Sprite {
 	// Event handler
 	private function onTouchStart(e:TouchEvent):Void{
 		trace("onTouchStart");
-		trace(e.delta);
 	}
 	private function onTouchMove(e:TouchEvent):Void{
-		trace(e);
+		trace("onTouchMove");
+		trace(e.localX,e.localY);
+		this.containerClip.y = e.localY;
 	}
 	private function onTouchEnd(e:TouchEvent):Void{
 		trace("onTouchEnd");
-		trace(e.delta);
 	}
 	
 	#if flash

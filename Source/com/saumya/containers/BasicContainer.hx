@@ -6,6 +6,13 @@ import openfl.display.Graphics;
 
 import openfl.display.DisplayObject;
 
+import openfl.events.TouchEvent;
+
+#if flash
+import flash.events.GestureEvent;
+import flash.events.TransformGestureEvent;
+#end
+
 import openfl.errors.Error;
 
 
@@ -31,6 +38,16 @@ class BasicContainer extends Sprite {
 
 		super.addChild(this.containerClip);
 		super.addChild(this.maskClip);
+
+		this.addEventListener(TouchEvent.TOUCH_BEGIN,onTouchStart);
+		this.addEventListener(TouchEvent.TOUCH_MOVE,onTouchMove);
+		this.addEventListener(TouchEvent.TOUCH_END,onTouchEnd);
+
+		#if flash
+		this.addEventListener(GestureEvent.GESTURE_TWO_FINGER_TAP,onGestureTwoFingureTap);
+		this.addEventListener(TransformGestureEvent.GESTURE_PAN,onGesturePan);
+		this.addEventListener(TransformGestureEvent.GESTURE_SWIPE,onGestureSwipe);
+		#end
 
 		render();
 	}
@@ -71,4 +88,28 @@ class BasicContainer extends Sprite {
 
 		return child;
 	}
+	// Event handler
+	private function onTouchStart(e:TouchEvent):Void{
+		trace("onTouchStart");
+		trace(e.delta);
+	}
+	private function onTouchMove(e:TouchEvent):Void{
+		trace(e);
+	}
+	private function onTouchEnd(e:TouchEvent):Void{
+		trace("onTouchEnd");
+		trace(e.delta);
+	}
+	
+	#if flash
+	private function onGestureTwoFingureTap(e:GestureEvent):Void{
+		trace("onGestureTwoFingureTap");
+	}
+	private function onGesturePan(e:GestureEvent):Void{
+		trace("onGesturePan");
+	}
+	private function onGestureSwipe(e:GestureEvent):Void{
+		trace("onGestureSwipe");
+	}
+	#end
 }

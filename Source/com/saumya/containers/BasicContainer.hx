@@ -103,10 +103,23 @@ class BasicContainer extends Sprite {
 		//trace("onTouchMove");
 		trace(e.localX,e.localY);
 		
+		var min = (this.containerClip.y - this.containerClip.height);
+		var max = (this.containerClip.y + this.containerClip.height);
+
 		//this.containerClip.y = e.localY;
 		//this.containerClip.y = e.localY - this.initY;
-
+		
 		this.containerClip.y = this.containerClip.y + (e.localY - this.initY);
+
+		if(max <= 10){
+			this.containerClip.y = max;
+		}else if(this.containerClip.y >= 0){
+			this.containerClip.y = 0;
+		}else{
+			//this.containerClip.y = this.containerClip.y + (e.localY - this.initY);
+		}
+
+		
 		
 		//trace(e.localX,e.localY);
 	}

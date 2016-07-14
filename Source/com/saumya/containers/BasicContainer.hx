@@ -104,7 +104,9 @@ class BasicContainer extends Sprite {
 		trace(e.localX,e.localY);
 		
 		//this.containerClip.y = e.localY;
-		this.containerClip.y = e.localY - this.initY;
+		//this.containerClip.y = e.localY - this.initY;
+
+		this.containerClip.y = this.containerClip.y + (e.localY - this.initY);
 		
 		//trace(e.localX,e.localY);
 	}

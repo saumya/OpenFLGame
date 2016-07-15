@@ -6,6 +6,7 @@ import openfl.display.Graphics;
 
 import openfl.display.DisplayObject;
 
+import openfl.events.Event;
 import openfl.events.TouchEvent;
 
 #if flash
@@ -28,7 +29,11 @@ class BasicContainer extends Sprite {
 	private var initX:Float = 0;
 	private var initY:Float = 0;
 
+	//
+
 	public function new(fWidth:Float=200,fHeight:Float=100) {
+		trace("BasicContainer : new :");
+
 		super();
 		widthX = fWidth;
 		heightX = fHeight;
@@ -36,6 +41,7 @@ class BasicContainer extends Sprite {
 		construct();
 	}
 	private function construct():Void{
+		trace("BasicContainer : construct :");
 
 		this.containerClip = new Sprite();
 		this.maskClip = new Sprite();
@@ -53,9 +59,13 @@ class BasicContainer extends Sprite {
 		this.addEventListener(TransformGestureEvent.GESTURE_SWIPE,onGestureSwipe);
 		#end
 
+		this.containerClip.addEventListener(Event.ADDED_TO_STAGE,onAddedToStage);
+
 		render();
 	}
 	private function render():Void{
+		trace("BasicContainer : render :");
+
 		// bg
 		var g:Graphics = this.graphics;
 		g.beginFill(0xFFFFFF,1.0);
@@ -87,12 +97,18 @@ class BasicContainer extends Sprite {
 	}
 	//
 	public function addContent(child:DisplayObject):DisplayObject{
+		trace("BasicContainer : addContent :");
+
 		//super.addChild(child);
 		this.containerClip.addChild(child);
 
 		return child;
 	}
 	// Event handler
+	private function onAddedToStage(e:Event):Void{
+		trace("BasicContainer : onAddedToStage :");
+	}
+	//
 	private function onTouchStart(e:TouchEvent):Void{
 		trace("onTouchStart");
 		trace(e.localX,e.localY);
@@ -118,8 +134,6 @@ class BasicContainer extends Sprite {
 		}else{
 			//this.containerClip.y = this.containerClip.y + (e.localY - this.initY);
 		}
-
-		
 		
 		//trace(e.localX,e.localY);
 	}

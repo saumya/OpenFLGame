@@ -10,12 +10,13 @@ The following are the details of the components in this library.
  - TextInputWithRandomColor
  - TextInputWithBgColor
 
+ - ScollView (wip)
+
 
 ### TODO:
 
  - Check Box
  - Toggle Button
- - ScollView (wip)
 
 
 

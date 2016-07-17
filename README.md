@@ -10,7 +10,7 @@ The following are the details of the components in this library.
  - TextInputWithRandomColor
  - TextInputWithBgColor
 
- - ScollView (wip) 
+ - ScollView (wip, bugfix) 
 
 
 ### TODO:

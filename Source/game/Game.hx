@@ -8,6 +8,7 @@ import com.saumya.components.ButtonSample;
 import com.saumya.components.ButtonWithRandomColor;
 import com.saumya.components.ButtonWithBgColor;
 import com.saumya.components.ButtonWithFixedWidth;
+import com.saumya.components.ToggleButton;
 
 import com.saumya.components.TextInputWithRandomColor;
 import com.saumya.components.TextInputWithBgColor;
@@ -68,6 +69,8 @@ class Game extends Sprite {
 		var t1:TextInputWithRandomColor = new TextInputWithRandomColor("input output",12,120);
 		var t2:TextInputWithBgColor = new TextInputWithBgColor("T2 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2",20,350,0xFF00FF);
 		
+		var tb1:ToggleButton = new ToggleButton();
+
 		var t3:TextInputWithBgColor = new TextInputWithBgColor("T2 T2 T2 T2 T2 T2 T2",18,220,0xFFFFFF,true);
 		var t4:TextInputWithBgColor = new TextInputWithBgColor("T4 is TextInputWithBgColor",18,250,0xCCCCCC,false);
 		var t5:TextInputWithBgColor = new TextInputWithBgColor("T5",18,250,0xCCCCCC,false);
@@ -93,6 +96,15 @@ class Game extends Sprite {
 		t2.x = 10;
 		t2.y = t1.y + t1.height + 2;
 		addChild(t2);
+
+		tb1.x = 10;
+		tb1.y = t2.y + t2.height + 2;
+		addChild(tb1);
+
+
+
+
+
 
 		t3.x = 10;
 		//t3.y = t2.y + t2.height + 2;
@@ -124,7 +136,7 @@ class Game extends Sprite {
 		var c1:BasicContainer = new BasicContainer(300,150);
 
 		c1.x = 10;
-		c1.y = t2.y + t2.height + 2;
+		c1.y = 200;
 		addChild(c1);
 
 		//c1.addChild(t3); // Error

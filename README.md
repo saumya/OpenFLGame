@@ -21,7 +21,7 @@ The following are the details of the components in this library.
 ### TODO:
 
  - Check Box
- - Toggle Button
+ - Toggle Button ( Wip )
 
 
 

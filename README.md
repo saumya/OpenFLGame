@@ -5,7 +5,6 @@ The following are the details of the components in this library.
 ### Notes
 
 ScollView     
-  
 	- Not suitable for HTML targets
 	- Works only for Touch inputs        
 

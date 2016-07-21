@@ -16,7 +16,7 @@ The following are the details of the components in this library.
  - TextInputWithBgColor
 
  - ScollView (wip, bugfix) 
-
+ - Toggle Button ( Switch - Done )
 
 ### TODO:
 

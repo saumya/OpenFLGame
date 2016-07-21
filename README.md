@@ -18,7 +18,7 @@ Components Status
  - TextInputWithBgColor
 
  - ScollView (wip, bugfix) 
- - Toggle Button ( Switch - Done )
+ - Toggle Button ( Switch )
 
 ### TODO:
 

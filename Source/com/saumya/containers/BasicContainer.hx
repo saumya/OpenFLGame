@@ -7,6 +7,7 @@ import openfl.display.Graphics;
 import openfl.display.DisplayObject;
 
 import openfl.events.Event;
+import openfl.events.MouseEvent;
 import openfl.events.TouchEvent;
 
 #if flash
@@ -107,6 +108,16 @@ class BasicContainer extends Sprite {
 	// Event handler
 	private function onAddedToStage(e:Event):Void{
 		trace("BasicContainer : onAddedToStage :");
+		//this.stage.addEventListener(MouseEvent.MOUSE_WHEEL,onMouseWheel);
+		this.addEventListener(MouseEvent.MOUSE_WHEEL,onMouseWheel);
+	}
+	private function onMouseWheel(e:MouseEvent):Void{
+		trace("onMouseWheel");
+		trace(e.delta);
+		trace(e.localX,e.localY);
+		
+		this.containerClip.y += (1*e.delta);
+
 	}
 	//
 	private function onTouchStart(e:TouchEvent):Void{

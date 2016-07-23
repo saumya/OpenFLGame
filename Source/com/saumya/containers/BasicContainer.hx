@@ -117,11 +117,26 @@ class BasicContainer extends Sprite {
 		#end
 	}
 	private function onMouseWheel(e:MouseEvent):Void{
-		trace("onMouseWheel");
-		trace(e.delta);
-		trace(e.localX,e.localY);
+		//trace("onMouseWheel");
+		//trace(e.delta);
+		//trace(e.localX,e.localY);
+
+		//trace(this.containerClip.y);
 		
-		this.containerClip.y += (1*e.delta);
+		//this.containerClip.y += (1*e.delta);
+
+		var multiplier:Int = 1;
+		//if(this.containerClip.y>=0){
+			if(e.delta>=0 && this.containerClip.y>=0 ){
+				// scroll bottom
+			}else if(e.delta<=0 && this.containerClip.y<=(-1)*(this.containerClip.height-this.maskClip.height) ){
+				// scroll top
+			}else{
+				this.containerClip.y += (multiplier*e.delta);
+			}
+		//}else{
+			
+		//}
 
 	}
 	//

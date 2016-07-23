@@ -49,16 +49,15 @@ class BasicContainer extends Sprite {
 
 		super.addChild(this.containerClip);
 		super.addChild(this.maskClip);
-
-		this.addEventListener(TouchEvent.TOUCH_BEGIN,onTouchStart);
-		this.addEventListener(TouchEvent.TOUCH_MOVE,onTouchMove);
-		this.addEventListener(TouchEvent.TOUCH_END,onTouchEnd);
-
+		
+		/*
 		#if flash
 		this.addEventListener(GestureEvent.GESTURE_TWO_FINGER_TAP,onGestureTwoFingureTap);
 		this.addEventListener(TransformGestureEvent.GESTURE_PAN,onGesturePan);
 		this.addEventListener(TransformGestureEvent.GESTURE_SWIPE,onGestureSwipe);
 		#end
+		*/
+		
 
 		this.containerClip.addEventListener(Event.ADDED_TO_STAGE,onAddedToStage);
 
@@ -109,7 +108,13 @@ class BasicContainer extends Sprite {
 	private function onAddedToStage(e:Event):Void{
 		trace("BasicContainer : onAddedToStage :");
 		//this.stage.addEventListener(MouseEvent.MOUSE_WHEEL,onMouseWheel);
-		this.addEventListener(MouseEvent.MOUSE_WHEEL,onMouseWheel);
+		#if desktop
+			this.addEventListener(MouseEvent.MOUSE_WHEEL,onMouseWheel);
+		#else 
+			this.addEventListener(TouchEvent.TOUCH_BEGIN,onTouchStart);
+			this.addEventListener(TouchEvent.TOUCH_MOVE,onTouchMove);
+			this.addEventListener(TouchEvent.TOUCH_END,onTouchEnd);
+		#end
 	}
 	private function onMouseWheel(e:MouseEvent):Void{
 		trace("onMouseWheel");

@@ -133,7 +133,7 @@ class Game extends Sprite {
 
 		// continers ===================================
 
-		var c1:BasicContainer = new BasicContainer(300,150);
+		var c1:BasicContainer = new BasicContainer(300,200);
 
 		c1.x = 10;
 		c1.y = 200;

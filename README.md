@@ -24,6 +24,7 @@ Components Status
 
  - Check Box
  - Toggle Button ( Wip )
+ - New UI Demo (WIP)
 
 
 

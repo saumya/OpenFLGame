@@ -11,12 +11,14 @@ import openfl.Assets;
 import openfl.Lib;
 
 import game.Game;
+import game.Demo;
 
 
 class Main extends Sprite {
 
 	private var Background:Bitmap;
 	private var game:Game;
+	private var demo:Demo;
 	
 	public function new () {
 		super ();
@@ -30,14 +32,17 @@ class Main extends Sprite {
 
 	private function construct ():Void {
 		addChild(Background);
-		addChild (game);
+		//addChild (game);
+		addChild(demo);
 	}
 
 	private function initialize ():Void {
 		stage.addEventListener (Event.RESIZE, stage_onResize);
 		Background = new Bitmap (Assets.getBitmapData ("images/background_tile.png"));
 		//Footer = new Bitmap (Assets.getBitmapData ("images/center_bottom.png"));
-		game = new Game ();
+		
+		//game = new Game ();
+		demo = new Demo();
 		construct();
 	}
 
@@ -46,7 +51,8 @@ class Main extends Sprite {
 		Background.width = newWidth;
 		Background.height = newHeight;
 		
-		game.resize (newWidth, newHeight);
+		//game.resize (newWidth, newHeight);
+		demo.resize (newWidth, newHeight);
 		
 		//Footer.scaleX = Game.currentScale;
 		//Footer.scaleY = Game.currentScale;

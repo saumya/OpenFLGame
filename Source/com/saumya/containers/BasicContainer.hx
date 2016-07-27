@@ -25,12 +25,11 @@ class BasicContainer extends Sprite {
 
 	private var containerClip:Sprite;
 	private var maskClip:Sprite;
+	private var vScrollbar:Sprite;
 
 	// gesture
 	private var initX:Float = 0;
 	private var initY:Float = 0;
-
-	//
 
 	public function new(fWidth:Float=200,fHeight:Float=100) {
 		trace("BasicContainer : new :");
@@ -46,9 +45,13 @@ class BasicContainer extends Sprite {
 
 		this.containerClip = new Sprite();
 		this.maskClip = new Sprite();
+		this.vScrollbar = new Sprite();
 
 		super.addChild(this.containerClip);
+		super.addChild(this.vScrollbar);
+
 		super.addChild(this.maskClip);
+
 		
 		/*
 		#if flash
@@ -80,10 +83,15 @@ class BasicContainer extends Sprite {
 		//
 		this.mask = this.maskClip;
 
-		//trace(this.width,this.height);
-
-		// this will be used to scroll
-		//this.containerClip.y = -100;
+		/*
+		// scrollbar : TODO
+		var g2:Graphics = this.vScrollbar.graphics;
+		g2.beginFill(0xCC0000,1.0);
+		//g2.drawRect(0,0,4,heightX);
+		g2.drawRect(0,0,4,50);
+		g2.endFill();
+		this.vScrollbar.x = this.widthX - 4;
+		*/
 	}
 
 	// Not allowed in container
@@ -103,6 +111,15 @@ class BasicContainer extends Sprite {
 		this.containerClip.addChild(child);
 
 		return child;
+	}
+	public function getNumContent():UInt{
+		return this.containerClip.numChildren;
+	}
+	public function removeLastContent():Void{
+		trace("BasicContainer : removeLastContent :");
+		var n = this.containerClip.numChildren;
+		//var a = this.getChildAt(n);
+		this.containerClip.removeChildAt(n-1);
 	}
 	// Event handler
 	private function onAddedToStage(e:Event):Void{

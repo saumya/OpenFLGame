@@ -83,15 +83,15 @@ class BasicContainer extends Sprite {
 		//
 		this.mask = this.maskClip;
 
-		/*
+		
 		// scrollbar : TODO
 		var g2:Graphics = this.vScrollbar.graphics;
 		g2.beginFill(0xCC0000,1.0);
 		//g2.drawRect(0,0,4,heightX);
-		g2.drawRect(0,0,4,50);
+		g2.drawRect(0,0,4,30);
 		g2.endFill();
 		this.vScrollbar.x = this.widthX - 4;
-		*/
+		this.vScrollbar.visible = false;
 	}
 
 	// Not allowed in container
@@ -107,6 +107,8 @@ class BasicContainer extends Sprite {
 	public function addContent(child:DisplayObject):DisplayObject{
 		trace("BasicContainer : addContent :");
 
+		child.addEventListener(Event.ADDED_TO_STAGE,onItemAddedToStage);
+
 		//super.addChild(child);
 		this.containerClip.addChild(child);
 
@@ -118,8 +120,31 @@ class BasicContainer extends Sprite {
 	public function removeLastContent():Void{
 		trace("BasicContainer : removeLastContent :");
 		var n = this.containerClip.numChildren;
-		//var a = this.getChildAt(n);
-		this.containerClip.removeChildAt(n-1);
+		var child = this.containerClip.getChildAt(n-1);
+		child.addEventListener(Event.REMOVED_FROM_STAGE,onItemRemovedFromStage);
+		
+		//this.containerClip.removeChildAt(n-1);
+		this.containerClip.removeChild(child);
+	}
+	private function onItemAddedToStage(e:Event):Void{
+		trace("onItemAddedToStage");
+		var h = this.containerClip.height;
+		trace("Container height:",h,this.maskClip.height);
+		if (h>this.maskClip.height) {
+			this.vScrollbar.visible = true;
+		}else{
+			this.vScrollbar.visible = false;
+		}
+	}
+	private function onItemRemovedFromStage(e:Event):Void{
+		trace("onItemRemovedFromStage");
+		var h = this.containerClip.height;
+		trace("Container height:",h,this.maskClip.height);
+		if (h>this.maskClip.height) {
+			this.vScrollbar.visible = true;
+		}else{
+			this.vScrollbar.visible = false;
+		}
 	}
 	// Event handler
 	private function onAddedToStage(e:Event):Void{
@@ -133,27 +158,24 @@ class BasicContainer extends Sprite {
 			this.addEventListener(TouchEvent.TOUCH_END,onTouchEnd);
 		#end
 	}
+	//
 	private function onMouseWheel(e:MouseEvent):Void{
 		//trace("onMouseWheel");
-		//trace(e.delta);
-		//trace(e.localX,e.localY);
-
-		//trace(this.containerClip.y);
-		
-		//this.containerClip.y += (1*e.delta);
 
 		var multiplier:Int = 1;
-		//if(this.containerClip.y>=0){
-			if(e.delta>=0 && this.containerClip.y>=0 ){
-				// scroll bottom
-			}else if(e.delta<=0 && this.containerClip.y<=(-1)*(this.containerClip.height-this.maskClip.height) ){
-				// scroll top
-			}else{
-				this.containerClip.y += (multiplier*e.delta);
-			}
-		//}else{
-			
-		//}
+		if(e.delta>=0 && this.containerClip.y>=0 ){
+			// scroll bottom
+		}else if(e.delta<=0 && this.containerClip.y<=(-1)*(this.containerClip.height-this.maskClip.height) ){
+			// scroll top
+		}else{
+			this.containerClip.y += (multiplier*e.delta);
+		}
+
+		var hContainer = this.containerClip.height;
+		var hMaskClip = this.maskClip.height;
+		var scrollDist = hContainer - hMaskClip;
+		// (hContainer>hMaskClip) 
+		this.vScrollbar.y += (-1)*e.delta*scrollDist;
 
 	}
 	//

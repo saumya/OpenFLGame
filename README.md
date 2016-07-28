@@ -1,15 +1,8 @@
-An OpenFL Component library
+Simple OpenFL component set
 ==========================
-The following are the details of the components in this library.
+A simple and hackable set of components. The repo contains the demo of the component implementation as well.
 
-
-### Notes
-
-ScollView
- - Not suitable for HTML targets
- - Works only for Touch inputs     
-
-Components Status
+### Components 
 
  - ButtonWithRandomColor
  - ButtonWithBgColor
@@ -18,8 +11,13 @@ Components Status
  - TextInputWithRandomColor
  - TextInputWithBgColor
 
- - ScollView (wip, bugfix) 
  - Toggle Button ( Switch )
+
+### Containers
+
+ - ScollView (wip, bugfix)
+  - Not suitable for HTML targets
+  - Works only for Touch inputs 
 
 ### TODO:
 

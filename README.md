@@ -22,7 +22,6 @@ A simple and hackable set of components. The repo contains the demo of the compo
 ### TODO:
 
  - Check Box
- - Toggle Button ( Wip )
  - New UI Demo (WIP)
 
 

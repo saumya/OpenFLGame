@@ -67,7 +67,7 @@ class Demo extends Sprite {
 	private function onAdd(e:MouseEvent):Void{
 		//var b1:ButtonWithFixedWidth = new ButtonWithFixedWidth("1",12,80,0x00FF00,true);
 		//var b1:SelectButton = new SelectButton(20);
-		var b1:SelectButtonWithLabel = new SelectButtonWithLabel(20,20,true,["I am Selected","Not Selected"],150);
+		var b1:SelectButtonWithLabel = new SelectButtonWithLabel(20,16,true,["I am Selected","Not Selected"],150);
 
 		trace(container1.getNumContent());
 		b1.x = 10;

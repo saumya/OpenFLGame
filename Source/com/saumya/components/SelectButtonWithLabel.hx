@@ -91,11 +91,13 @@ class SelectButtonWithLabel extends Sprite {
 		var c1:UInt = 0x444444;
 		g.beginFill(c1,1.0);
 		g.drawRect(xPos,0,w,h);
+		//g.drawCircle(xPos+h/2,0,h);
 		g.endFill();
 		
 		var c2:UInt = 0x888888;
 		g.beginFill(c2,1.0);
 		g.drawRect(xPos+2,2,w-4,h-4);
+		//g.drawCircle(xPos+h/2,0,h-4);
 		g.endFill();
 		
 		// draw the button
@@ -103,6 +105,7 @@ class SelectButtonWithLabel extends Sprite {
 		var c3:UInt = 0x00FF00;
 		g1.beginFill(c3,1.0);
 		g1.drawRect(4,4,w-8,h-8);
+		//g1.drawCircle(10,0,w-8);
 		g1.endFill();
 		this.btn.alpha = 0;
 	}//drawBackground

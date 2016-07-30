@@ -12,7 +12,8 @@ A simple and hackable set of components. The repo contains the demo of the compo
  - TextInputWithBgColor
 
  - Toggle Button ( Switch )
- - Check Box
+ - Check Box ( SelectButton )
+ - Check Box with Label (SelectButtonWithLabel)
 
 ### Containers
 

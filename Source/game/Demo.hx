@@ -6,6 +6,7 @@ import openfl.events.MouseEvent;
 
 import com.saumya.components.ButtonWithFixedWidth;
 import com.saumya.components.SelectButton;
+import com.saumya.components.SelectButtonWithLabel;
 
 import com.saumya.containers.BasicContainer;
 
@@ -65,7 +66,8 @@ class Demo extends Sprite {
 	}
 	private function onAdd(e:MouseEvent):Void{
 		//var b1:ButtonWithFixedWidth = new ButtonWithFixedWidth("1",12,80,0x00FF00,true);
-		var b1:SelectButton = new SelectButton(20);
+		//var b1:SelectButton = new SelectButton(20);
+		var b1:SelectButtonWithLabel = new SelectButtonWithLabel(20);
 
 		trace(container1.getNumContent());
 		b1.x = 10;

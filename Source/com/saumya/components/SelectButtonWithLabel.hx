@@ -28,19 +28,25 @@ class SelectButtonWithLabel extends Sprite {
 	private var btn:Sprite;
 	private var isOn:Bool;
 
-	private var widthX:Float;
-	private var heightX:Float;
+	//private var widthX:Float;
+	//private var heightX:Float;
 
 	private var label:TextField;
 	private var fontHeight:UInt;
+	private var isLabelOnLeft:Bool;
 
-	public function new(sizeWidth:UInt) {
+	private var aLabels:Array<String>;
+
+	public function new(checkBoxSize:UInt,uFontHeight:UInt,isLabelOnLeft:Bool, labels:Array<String>,labelWidth:Float) {
 		super();
-		construct(sizeWidth);
+		construct(checkBoxSize,uFontHeight,isLabelOnLeft,labels,labelWidth);
 	}
-	private function construct(sizeWidth:UInt):Void{
+	private function construct(sizeWidth:UInt,uFontHeight:UInt,isLabelOnLeft:Bool,labels:Array<String>,labelWidth:Float):Void{
 		isOn = false;
-		this.fontHeight = sizeWidth-4;
+		//this.fontHeight = sizeWidth-4;
+		this.fontHeight = uFontHeight;
+		this.isLabelOnLeft = isLabelOnLeft;
+		this.aLabels = labels;
 
 		btn = new Sprite();
 		this.addEventListener(MouseEvent.CLICK,onClick);
@@ -51,7 +57,7 @@ class SelectButtonWithLabel extends Sprite {
 		defaultFormat.align = TextFormatAlign.LEFT;
 
 		label = new TextField();
-		label.text = "Not Select";
+		label.text = this.aLabels[1];
 		label.autoSize = TextFieldAutoSize.LEFT;
 		//label.width = 200;
 		//label.type = TextFieldType.INPUT;
@@ -62,24 +68,34 @@ class SelectButtonWithLabel extends Sprite {
 		label.multiline = false;
 		label.selectable = false;
 		label.x = sizeWidth + 4;
+		label.y = (-1)*(this.fontHeight/4);
 		addChild(label);
 
-		widthX = sizeWidth;
-		heightX = sizeWidth;
-		drawBackground(widthX,heightX);
+		//position
+		var posX:Float = 0;
+		if(isLabelOnLeft){
+			//posX = label.x+label.width+4; // 4 : distance between label and button
+			//posX = 100; // Just a default
+			posX = labelWidth;
+			label.x = 0;
+			btn.x = posX;
+		}
+
+		drawBackground(sizeWidth,sizeWidth,posX);
 	}
-	private function drawBackground(w:Float,h:Float):Void{
-		//var widthX:Float = w + (2*margin);
+	private function drawBackground(w:Float,h:Float,xPos:Float):Void{
+		// This could be done better. Fix this once its workable
+
 		var g:Graphics = this.graphics;
-		//var c:UInt = Math.round(Math.random()*this.maxColorValue);
+		
 		var c1:UInt = 0x444444;
 		g.beginFill(c1,1.0);
-		g.drawRect(0,0,w,h);
+		g.drawRect(xPos,0,w,h);
 		g.endFill();
 		
 		var c2:UInt = 0x888888;
 		g.beginFill(c2,1.0);
-		g.drawRect(2,2,w-4,h-4);
+		g.drawRect(xPos+2,2,w-4,h-4);
 		g.endFill();
 		
 		// draw the button
@@ -101,12 +117,12 @@ class SelectButtonWithLabel extends Sprite {
 			//newX = widthX/2;
 			//newColor = 0xFFFFFF;
 			alphaX = 1;
-			label.text = "Select";
+			label.text = this.aLabels[0];
 		} else{
 			//newX = 0;
 			//newColor = 0xCCCCCC;
 			alphaX = 0;
-			label.text = "Not Select";
+			label.text = this.aLabels[1];
 		}
 		Actuate.tween(this.btn,0.6,{ alpha:alphaX }).ease (Quad.easeOut);
 		trace('isOn',isOn);

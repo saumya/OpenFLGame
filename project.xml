@@ -14,6 +14,7 @@
 
 	<haxelib name="openfl" />
 	<haxelib name="actuate" />
+	<haxelib name="raymp" />
 	
 	<assets path="Assets" rename="assets" />
 	

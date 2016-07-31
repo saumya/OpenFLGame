@@ -1,38 +1,21 @@
-Simple OpenFL component set
+Demo for raymp
 ==========================
-A simple and hackable set of components. The repo contains the demo of the component implementation as well.
+RayComp or [raymp][1] demo repository.          
 
-### Components 
+The component library is moved to its own repository.
 
- - ButtonWithRandomColor
- - ButtonWithBgColor
- - Button with Fixed width
-
- - TextInputWithRandomColor
- - TextInputWithBgColor
-
- - Toggle Button ( Switch )
- - Check Box ( SelectButton )
- - Check Box with Label (SelectButtonWithLabel)
-
-### Containers
-
- - ScollView (wip, bugfix)
-  - Not suitable for HTML targets
-  - Works only for Touch inputs 
-
-### TODO:
-
- - New UI Demo (WIP)
-
-
-
-
-### Assets Used
- - [archistico][1]
+If using the library directly then as usual with other Haxelibs please add the library path manually to your project compiler arguements.
+```
+haxelib dev raymp /Users/saumya/3_haxelibs/raymp/
+```
 
 
 
 
 
-[1]: https://www.fontsquirrel.com/fonts/archistico
+
+
+
+
+
+[1]: https://github.com/saumya/raymp

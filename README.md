@@ -8,6 +8,10 @@ If using the library directly then as usual with other Haxelibs please add the l
 ```
 haxelib dev raymp /Users/saumya/3_haxelibs/raymp/
 ```
+And in the project xml file add
+```
+<haxelib name="raymp" />
+```
 
 
 

@@ -32,8 +32,8 @@ class Main extends Sprite {
 
 	private function construct ():Void {
 		addChild(Background);
-		//addChild (game);
-		addChild(demo);
+		addChild (game);
+		//addChild(demo);
 	}
 
 	private function initialize ():Void {
@@ -41,8 +41,8 @@ class Main extends Sprite {
 		Background = new Bitmap (Assets.getBitmapData ("images/background_tile.png"));
 		//Footer = new Bitmap (Assets.getBitmapData ("images/center_bottom.png"));
 		
-		//game = new Game ();
-		demo = new Demo();
+		game = new Game ();
+		//demo = new Demo();
 		construct();
 	}
 
@@ -51,8 +51,8 @@ class Main extends Sprite {
 		Background.width = newWidth;
 		Background.height = newHeight;
 		
-		//game.resize (newWidth, newHeight);
-		demo.resize (newWidth, newHeight);
+		game.resize (newWidth, newHeight);
+		//demo.resize (newWidth, newHeight);
 		
 		//Footer.scaleX = Game.currentScale;
 		//Footer.scaleY = Game.currentScale;

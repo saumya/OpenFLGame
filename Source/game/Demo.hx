@@ -4,11 +4,11 @@ import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.events.MouseEvent;
 
-import com.saumya.components.ButtonWithFixedWidth;
-import com.saumya.components.SelectButton;
-import com.saumya.components.SelectButtonWithLabel;
+import com.saumya.raymp.components.ButtonWithFixedWidth;
+import com.saumya.raymp.components.SelectButton;
+import com.saumya.raymp.components.SelectButtonWithLabel;
 
-import com.saumya.containers.BasicContainer;
+import com.saumya.raymp.containers.BasicContainer;
 
 class Demo extends Sprite {
 

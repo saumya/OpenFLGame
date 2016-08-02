@@ -4,16 +4,16 @@ import openfl.display.Sprite;
 
 import openfl.ui.Multitouch;
 
-import com.saumya.components.ButtonSample;
-import com.saumya.components.ButtonWithRandomColor;
-import com.saumya.components.ButtonWithBgColor;
-import com.saumya.components.ButtonWithFixedWidth;
-import com.saumya.components.ToggleButton;
+import com.saumya.raymp.components.ButtonSample;
+import com.saumya.raymp.components.ButtonWithRandomColor;
+import com.saumya.raymp.components.ButtonWithBgColor;
+import com.saumya.raymp.components.ButtonWithFixedWidth;
+import com.saumya.raymp.components.ToggleButton;
 
-import com.saumya.components.TextInputWithRandomColor;
-import com.saumya.components.TextInputWithBgColor;
+import com.saumya.raymp.components.TextInputWithRandomColor;
+import com.saumya.raymp.components.TextInputWithBgColor;
 
-import com.saumya.containers.BasicContainer;
+import com.saumya.raymp.containers.BasicContainer;
 
 class Game extends Sprite {
 

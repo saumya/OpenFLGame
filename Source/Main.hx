@@ -42,7 +42,7 @@ class Main extends Sprite {
 		//Footer = new Bitmap (Assets.getBitmapData ("images/center_bottom.png"));
 		
 		game = new Game ();
-		//demo = new Demo();
+		demo = new Demo();
 		construct();
 	}
 
@@ -52,7 +52,7 @@ class Main extends Sprite {
 		Background.height = newHeight;
 		
 		game.resize (newWidth, newHeight);
-		//demo.resize (newWidth, newHeight);
+		demo.resize (newWidth, newHeight);
 		
 		//Footer.scaleX = Game.currentScale;
 		//Footer.scaleY = Game.currentScale;

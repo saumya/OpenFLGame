@@ -8,7 +8,11 @@ import com.saumya.raymp.components.ButtonSample;
 import com.saumya.raymp.components.ButtonWithRandomColor;
 import com.saumya.raymp.components.ButtonWithBgColor;
 import com.saumya.raymp.components.ButtonWithFixedWidth;
+
 import com.saumya.raymp.components.ToggleButton;
+
+import com.saumya.raymp.components.SelectButton;
+import com.saumya.raymp.components.SelectButtonWithLabel;
 
 import com.saumya.raymp.components.TextInputWithRandomColor;
 import com.saumya.raymp.components.TextInputWithBgColor;
@@ -102,10 +106,21 @@ class Game extends Sprite {
 		addChild(tb1);
 
 
+		var btnSelect = new SelectButton(20);
+		btnSelect.x = 10;
+		btnSelect.y = tb1.y + tb1.height + 2;
+		addChild(btnSelect);
+
+		var btnSelect2 = new SelectButtonWithLabel(20,14,false,["On","Off"],100);
+		btnSelect2.x = 10;
+		btnSelect2.y = btnSelect.y + btnSelect.height + 2;
+		addChild(btnSelect2);
 
 
 
 
+
+		// Added to container
 		t3.x = 10;
 		//t3.y = t2.y + t2.height + 2;
 		//addChild(t3);

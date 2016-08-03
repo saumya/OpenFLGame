@@ -13,9 +13,6 @@ And in the project xml file add
 <haxelib name="raymp" />
 ```
 
-### WIP
-
- - Changing the package information
 
 
 

@@ -168,5 +168,8 @@ class Game extends Sprite {
 		slider1.x = 10;
 		slider1.y = c1.y + c1.height + 2;
 		addChild(slider1);
+		//vertical
+		//slider1.rotation = -90;
+		//slider1.x = 10 + 40 + 400;
 	}
 }

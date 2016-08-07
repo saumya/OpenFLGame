@@ -17,6 +17,8 @@ import com.saumya.raymp.components.SelectButtonWithLabel;
 import com.saumya.raymp.components.TextInputWithRandomColor;
 import com.saumya.raymp.components.TextInputWithBgColor;
 
+import com.saumya.raymp.components.Slider;
+
 import com.saumya.raymp.containers.BasicContainer;
 
 class Game extends Sprite {
@@ -117,9 +119,6 @@ class Game extends Sprite {
 		addChild(btnSelect2);
 
 
-
-
-
 		// Added to container
 		t3.x = 10;
 		//t3.y = t2.y + t2.height + 2;
@@ -163,5 +162,11 @@ class Game extends Sprite {
 		c1.addContent(t8);
 		c1.addContent(t9);
 		c1.addContent(t10);
+
+		//
+		var slider1:Slider = new Slider();
+		slider1.x = 10;
+		slider1.y = c1.y + c1.height + 2;
+		addChild(slider1);
 	}
 }

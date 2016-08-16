@@ -18,7 +18,6 @@ And in the project xml file add
 
 
 ### TODO
- - Write the docs
  - Bugifx
 
 

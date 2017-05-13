@@ -17,11 +17,9 @@ And in the project xml file add
 `raymp is now available in haxelib`
 
 
-### TODO
- - Bugifx
-
 ### WIP
  - Bigfix
+ - New Components
 
 
 
